@@ -34,8 +34,8 @@ export const makeMainRoutes = () => {
         <Route
           path="/transactions"
           render={props=>
-            !loggedIn ? (
-              <Redirect to="/home"/>
+            !auth.isAuthenticated() ? (
+              <Redirect to="/"/>
             ) : (
               <Transactions auth={auth} {...props} />
             )
@@ -44,7 +44,7 @@ export const makeMainRoutes = () => {
         <Route
         path="/masonry"
         render={props =>
-          !loggedIn || !auth.isAuthenticated() ? (
+          !auth.isAuthenticated() ? (
             <Redirect to="/home" />
           ) : (
               <Masonry auth={auth} {...props} />

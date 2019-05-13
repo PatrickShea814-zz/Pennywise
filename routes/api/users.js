@@ -3,6 +3,7 @@ const controller = require("../../controllers/index");
 
 // Matches with "/api/users"
 router.route("/")
+
   ;
 
 // Matches with "/api/users/getPublicKey"

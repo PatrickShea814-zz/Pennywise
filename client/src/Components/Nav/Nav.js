@@ -68,6 +68,7 @@ const SignInButton = styled.button`
 
 class HomeNav extends Component {
     render() {
+        console.log('WHAT MOTHERFUCKER', this.props)
         const login = this.props.auth.login
         return (
             <Nav>

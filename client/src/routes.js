@@ -24,10 +24,13 @@ export const makeMainRoutes = () => {
     <Router history={history}>
       
       <div>
-      
-        <Route path="/" render={props =>
-          <App auth={auth} {...props} />} 
-          />
+          <Route path="/" render={props =>
+          !auth.isAuthenticated() ?
+          <App auth={auth} {...props} /> :
+          <App auth={auth} {...props} />
+        } 
+          /> :
+
         <Route
           path="/transactions"
           render={props=>

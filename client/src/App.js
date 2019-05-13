@@ -3,14 +3,28 @@ import {Component} from 'react';
 import Wrapper from "./Components/Wrapper/Wrapper";
 import NavBar from "./Components/Nav/Nav.js";
 import Footer from "./Components/Footer/Footer";
-import Welcome from "./Components/Content/Welcome"
+import Welcome from "./Components/Content/Welcome";
+import history from "./history";
 import './App.css';
-import './App.scss'
+import './App.scss';
+import Masonry from './Components/WishListDash/Masonry';
 
 class App extends Component{
   
-  render(props){
-    
+  state = {
+    loggedIn: false
+  }
+
+  componentDidMount(){
+    if (this.props.auth.isAuthenticated()){
+      this.setState({ loggedIn: true})
+      history.replace('/masonry')
+    }
+  }
+
+  render(){
+
+    if(!this.state.loggedIn){
     return (
     <div className="App">
     <Wrapper >
@@ -20,6 +34,20 @@ class App extends Component{
     <Footer />
     </div>
   )
+  }
+
+  else {
+    return (<>
+    <Wrapper >
+    <NavBar {...this.props} />
+    <Masonry {...this.props} />
+  </Wrapper>
+  <div>
+  <Footer />
+  </div>
+  </>
+  )
+  }
   
 }
 

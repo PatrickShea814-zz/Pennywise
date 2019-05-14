@@ -20,7 +20,7 @@ class App extends Component {
  componentDidMount(){
    this.getPublicKey()
     .then(res => {
-      console.log('ARGGH', res)
+      console.log('ARGGH', res.data)
       this.setState({ 
       publicKey: res.data.PLAID_PUBLIC_KEY
       })
@@ -33,7 +33,7 @@ class App extends Component {
     console.log("Client token = ", token);
     axios.request({
       method: "POST",
-      url: "/api/get_access_token",
+      url: "/api/users/get_access_token",
       data: {
         public_token: token,
         account_id: metadata.account_id,
@@ -43,12 +43,15 @@ class App extends Component {
       console.log("Plaid post success", res.data)
       axios.request({
         method:"POST",
-        url:`/api/user/update/${user_id}`,
+        url:"/api/users/update/",
         data:{
           accounts: metadata.accounts,
           accessToken: res.data.access_token,
+          user_id: user_id
         }
-    }).catch((err) => { console.log("userID post failed", err) });
+    })
+    .then(res => console.log('USER UPDATE SUCCESS', res.data))
+    .catch((err) => { console.log("userID post failed", err) });
 
     // axios.request({
     //   method:"POST",

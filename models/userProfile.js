@@ -31,7 +31,7 @@ let userSchema = new Schema({
     auth0_ID: {
         type: String,
         unique: true,
-        require: true
+        required: true
     },
     phoneNum: {
         type: String

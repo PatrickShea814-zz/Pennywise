@@ -24,7 +24,7 @@ router
   .post(controller.authAPI)
 
 router
-  .route("/update/:id")
+  .route("/update")
   .post(controller.updateUser)
 
 module.exports = router;

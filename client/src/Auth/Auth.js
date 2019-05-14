@@ -106,7 +106,7 @@ export default class Auth {
         // auth0 management API to get user information such as email
         axios.request({
           method: "POST",
-          url: "/api/authAPI",
+          url: "/api/users/auth",
           data: {user_id}
 
         }).then( (res) => {console.log("userID post success", res.data)

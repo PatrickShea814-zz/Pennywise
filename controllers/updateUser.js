@@ -1,13 +1,18 @@
 const db = require('../models');
 const helpers = require('../utils/');
+const STRIPE_ENV = process.env.STRIPE_KEY;
+const stripe = require('stripe')(STRIPE_ENV);
 const pseries = helpers.pseries;
 const client = helpers.client;
 const accountCreator = helpers.accountCreator;
 
-module.exports =  async function (request, response, next) {
-    console.log('HELLO WORLD');
+module.exports =  async function (req, res, next) {
+    console.log('ONE SEC', req.body)
+    ACCOUNTS = req.body.accounts;
+    AUTH0_ID = req.body.user_id;
+    ACCESS_TOKEN = req.body.accessToken;
     let arr = [];
-    console.log("ACCOUNTS = ", ACCOUNTS);
+  
     for (let i = 0; i < ACCOUNTS.length; i++){
       if (ACCOUNTS[i].subtype !== 'checking'){
         arr.push(ACCOUNTS[i])
@@ -15,13 +20,13 @@ module.exports =  async function (request, response, next) {
     }
 
     if (arr.length > 0){
-      return response.json(arr)
+      return res.json(arr)
     }
   
-    client.getIdentity(ACCESS_TOKEN, function (error, identityResponse) {
+    client.getIdentity(ACCESS_TOKEN, function (error, identityres) {
       if (error != null) {
-        prettyPrintResponse(error);
-        return response.json({
+        prettyPrintres(error);
+        return res.json({
           error: error,
         });
       }
@@ -33,38 +38,37 @@ module.exports =  async function (request, response, next) {
         )
       }
       async function NewUserPlaidItemCreator(res){
-  
         return Promise.resolve(db.PlaidItems.create({
           userID: res._id,
-          institutionID: identityResponse.item.institution_id,
+          institutionID: identityres.item.institution_id,
           accessToken: ACCESS_TOKEN,
-          itemID: identityResponse.item.institution_id
+          itemID: identityres.item.institution_id
         }))
   
       }
   
       let PlaidItemIntoUserModel = (res => {
-       
+        
         return Promise.resolve(
           db.User.findOneAndUpdate({ _id: res.userID }, { $push: { plaidItems: res } })
         )
       })
   
       let PlaidAccountsCreator = ((res) => {
-        
         return Promise.resolve(
           accountCreator(res, ACCESS_TOKEN, ACCOUNTS)
         )
       })
   
       let PlaidAccountsIntoUserModel = (res => {
+        
         return Promise.resolve(
           db.User.findOneAndUpdate({ _id: res[0].userID }, { $push: { plaidAccounts: res[0] } })
         )
       });
   
       async function TokenCreator(res) {
-  
+        
           let Tkn = await db.PlaidUserAccounts.find({ userID: res._id })
           
             return [res, Tkn]
@@ -73,14 +77,13 @@ module.exports =  async function (request, response, next) {
       
       async function StripeAccountCreator (res) {
   
-        console.log(res);
         let USER = res[0];
         let strTok = res[1].stripeToken;
   
   
         let StripeCustomer = await stripe.customers.create({
             
-            "source": 'btok_us_verified',
+            "source": strTok,
   
           })
         
@@ -117,13 +120,15 @@ module.exports =  async function (request, response, next) {
         return [newUser, Customer]
       }
   
-  
       let arr = [NewUserCreator, NewUserPlaidItemCreator, PlaidItemIntoUserModel, PlaidAccountsCreator, PlaidAccountsIntoUserModel, TokenCreator, StripeAccountCreator, StripeDataCreator];
       pseries(arr)
-      .then(res => {
-        response.json(res)
+      .then(result => {
+        console.log('RESPONSE', result[0])
+        res.json(result)
       })
-      .catch(err => response.json(err));
+      .catch(err => {
+        res.json(err)
+      });
     })
   
   }

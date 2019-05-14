@@ -2,7 +2,7 @@ const db = require('../models');
 
 module.exports = async function( req, res) {
   console.log('HELLO WORLD')  
-    AUTH0_ID = req.params.user_id;
+    AUTH0_ID = req.body.user_id;
     await db.User.findOne({
       auth0_ID: AUTH0_ID
     }).then(function(dbData){

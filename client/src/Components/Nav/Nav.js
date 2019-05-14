@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
-import pennywiselogo from './img/whitelogo.png';
-;
+import pennywiselogo from '../../Assets/LogoImages/whitelogo.png';
 
 const Nav = styled.nav`
     height: 10%;

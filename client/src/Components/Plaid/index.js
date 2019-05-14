@@ -13,14 +13,14 @@ class App extends Component {
 
   getPublicKey = async function(){
     
-    return await axios.get('/api/getPublicKey')
+    return await axios.get('api/users/getPublicKey')
     
   }
 
  componentDidMount(){
    this.getPublicKey()
     .then(res => {
-      console.log('HELLO', res.data)
+      console.log('ARGGH', res)
       this.setState({ 
       publicKey: res.data.PLAID_PUBLIC_KEY
       })
@@ -29,6 +29,7 @@ class App extends Component {
  
   handleOnSuccess(token, metadata) {
     // send token to client server
+    const user_id = sessionStorage.getItem('user_id')
     console.log("Client token = ", token);
     axios.request({
       method: "POST",
@@ -40,16 +41,25 @@ class App extends Component {
       }
     }).then((res) => {
       console.log("Plaid post success", res.data)
+      axios.request({
+        method:"POST",
+        url:`/api/user/update/${user_id}`,
+        data:{
+          accounts: metadata.accounts,
+          accessToken: res.data.access_token,
+        }
     }).catch((err) => { console.log("userID post failed", err) });
 
-    axios.request({
-      method:"GET",
-      url:"/api/updateUser"
-    }).then(res => {
-      console.log("updateUser Route Success = ", res.data)
-      history.replace('/masonry')
-    }).catch(err => { console.log("updateUser Route error", err) })
-  }
+    // axios.request({
+    //   method:"POST",
+    //   url:"/api/user/updateUser",
+    //   data:
+    // }).then(res => {
+    //   console.log("updateUser Route Success = ", res.data)
+    //   history.replace('/masonry')
+    // }).catch(err => { console.log("updateUser Route error", err) })
+  })
+}
 
   render() {
     console.log('THIS IS OUR PUBLIC KEY', this.state.publicKey)

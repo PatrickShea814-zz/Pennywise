@@ -22,34 +22,24 @@ export const makeMainRoutes = () => {
   const loggedIn = sessionStorage.getItem('isLoggedIn')
   return (
     <Router history={history}>
-      
+
       <div>
-          <Route path="/" render={props =>
+        <Route path="/" render={props =>
           !auth.isAuthenticated() ?
-          <App auth={auth} {...props} /> :
-          <App auth={auth} {...props} />
-        } 
-          /> :
+            <App auth={auth} {...props} /> :
+            <App auth={auth} {...props} />
+        }
+        /> :
 
         <Route
           path="/transactions"
-          render={props=>
+          render={props =>
             !auth.isAuthenticated() ? (
-              <Redirect to="/"/>
+              <Redirect to="/" />
             ) : (
-              <Transactions auth={auth} {...props} />
-            )
+                <Transactions auth={auth} {...props} />
+              )
           }
-        />
-        <Route
-        path="/masonry"
-        render={props =>
-          !auth.isAuthenticated() ? (
-            <Redirect to="/home" />
-          ) : (
-              <Masonry auth={auth} {...props} />
-            )
-        }
         />
         <Route
           path="/plaid"
@@ -65,7 +55,6 @@ export const makeMainRoutes = () => {
           path="/callback"
           render={props => {
             handleAuthentication(props);
-
             return <Callback {...props} />;
           }}
         />

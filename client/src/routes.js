@@ -53,14 +53,9 @@ export const makeMainRoutes = () => {
         />
         <Route
           path="/plaid"
-          render={props =>
-            !loggedIn || !auth.isAuthenticated() ? (
-              <Redirect to="/home" />
-            ) : (
-                <Plaid auth={auth} {...props} />
-              )
-          }
-        />
+          component={Plaid}
+          />
+        
         <Route
           path="/callback"
           render={props => {

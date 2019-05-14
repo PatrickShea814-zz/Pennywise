@@ -25,37 +25,23 @@ class App extends Component {
   }
 
   render() {
-
-    if (!this.state.loggedIn) {
-      return (
-        <div className="App">
-          <SideNavigation />
-          <div className="Site-content">
-            <Wrapper >
-              <NavBar {...this.props} />
-              <Welcome {...this.props} />
-              <Masonry />
-            </Wrapper>
-          </div>
-          <Footer />
+    const { isAuthenticated } = this.props.auth;
+    return (
+      <div className="App">
+        <SideNavigation />
+        <div className="Site-content">
+          <Wrapper >
+          <NavBar {...this.props} />
+          {!isAuthenticated() ? (
+            <Welcome {...this.props} />
+          ) : (
+            <Masonry />
+          )}
+          </Wrapper>
         </div>
-      )
-    }
-
-    else {
-      return (
-        <div className="App">
-          <div className="Site-content">
-            <Wrapper >
-              <NavBar {...this.props} />
-              <EmptyWishList />
-            </Wrapper>
-          </div>
-          <Footer />
-        </div>
-      )
-    }
-
+        <Footer />
+      </div>
+    )
   }
 
 }

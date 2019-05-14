@@ -36,6 +36,7 @@ class Masonry extends Component {
     }
 
     removeImage() {
+        console.log("RemoveImage() function DID RUN")
     }
 
     render() {
@@ -77,7 +78,7 @@ const Tile = ({ src }, props) => {
             <div className="card-body" id="itemContent">
                 {props.price}
                 <Button
-                    bsStyle="primary"
+                    bsstyle="primary"
                     id="viewItem"
                     className="btn"
                     onClick={props.rem}
@@ -85,7 +86,7 @@ const Tile = ({ src }, props) => {
                     <span>View Item</span>
                 </Button>
                 <Button
-                    bsStyle="danger"
+                    bsstyle="danger"
                     id="removeItem"
                     className="btn"
                     onClick={props.rem}

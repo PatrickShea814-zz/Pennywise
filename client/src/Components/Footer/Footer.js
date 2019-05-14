@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import FooterLogo from './img/navlogo.png';
 
 const Footer = styled.footer`
     margin: 0 auto;

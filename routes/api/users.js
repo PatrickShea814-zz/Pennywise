@@ -25,6 +25,6 @@ router
 
 router
   .route("/update")
-  .get(controller.updateUser)
+  .post(controller.updateUser)
 
 module.exports = router;

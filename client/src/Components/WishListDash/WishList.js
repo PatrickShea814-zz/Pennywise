@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './WishList.css';
+import "../../Assets/css/WishList.css";
 
 class WishList extends Component {
     constructor(props) {

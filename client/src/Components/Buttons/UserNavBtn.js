@@ -18,11 +18,11 @@ const UserNavigationBtn = styled.button`
     box-shadow: 0px 5px 8px #888888;
     float: right;
     &:hover {
-        background-color: #00a79d;
+        background-color: #7AE0BB;
         color: white;
     }
     &:active {
-        background-color: #7AE0BB;
+        background-color: #00a79d;
         transform: translateY(1px);
     }
 `;

@@ -6,7 +6,6 @@ import Footer from "./Components/Footer/Footer";
 import Welcome from "./Components/Content/Welcome";
 import EmptyWishList from "./Components/Content/NoItemsDash";
 import history from "./history";
-import SideNavigation from "./Components/SideNav/SideNav";
 import './App.scss';
 import './App.css';
 import Masonry from './Components/WishListDash/Masonry';
@@ -29,7 +28,6 @@ class App extends Component {
     if (!this.state.loggedIn) {
       return (
         <div className="App">
-          <SideNavigation />
           <div className="Site-content">
             <Wrapper >
               <NavBar {...this.props} />

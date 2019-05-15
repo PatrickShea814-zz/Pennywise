@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './WishList.css';
+import "../../Assets/css/WishList.css";
 
 class WishList extends Component {
     constructor(props) {
@@ -37,13 +37,6 @@ class WishList extends Component {
             return p;
         }, col);
     }
-
-    // selectItem(e){
-    //     let target = e.target;
-    //     console.log("selectItem() function ran...");
-    //     // console.log("Event = ", e)
-    //     // console.log("Target = ", target)
-    // }
 
     render() {
         return (

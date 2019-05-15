@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ExtensionButton = styled.button`
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 2px;
     margin: 0 1.9em 0 2.3em;
     font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
-    padding: 10px 1em;
+    padding: 0.5% 3%;
     color: #00a79d;
     background-color: #ffffff;
     cursor: pointer;

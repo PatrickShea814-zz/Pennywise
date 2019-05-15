@@ -9,6 +9,7 @@ import history from "./history";
 import './App.scss';
 import './App.css';
 import Masonry from './Components/WishListDash/Masonry';
+import NextItem from './Components/Content/NextItem';
 
 class App extends Component {
 
@@ -33,7 +34,10 @@ class App extends Component {
             {!isAuthenticated() ? (
               <Welcome {...this.props} />
             ) : (
-                <Masonry />
+                <div>
+                  <NextItem />
+                  <Masonry />
+                </div>
               )}
           </Wrapper>
         </div>

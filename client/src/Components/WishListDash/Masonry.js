@@ -1,17 +1,39 @@
 import React, { Component } from "react";
+import styled from 'styled-components';
 import WishList from "./WishList";
 import ViewItem from "../Buttons/ViewItem";
 import RemoveItem from "../Buttons/RemoveItem"
 import Microlink from '@microlink/react';
 import "../../Assets/css/WishList.css";
 
-// let brakePoints = [350, 500, 750];
-// let images = [];
-// const imgId = [1011, 883, 1074, 823, 64, 65, 839, 314, 256, 316, 92, 643];
-// for (let i = 0; i < imgId.length; i++) {
-//   const ih = 200 + Math.floor(Math.random() * 10) * 15;
-//   images.push("https://unsplash.it/250/" + ih + "?image=" + imgId[i]);
-// }
+let brakePoints = [350, 500, 750];
+let images = [];
+const imgId = [1011, 883, 1074, 823, 64, 65, 839, 314, 256, 316, 92, 643];
+for (let i = 0; i < imgId.length; i++) {
+    const ih = 200 + Math.floor(Math.random() * 10) * 15;
+    images.push("https://unsplash.it/250/" + ih + "?image=" + imgId[i]);
+}
+
+const Balance = styled.h1`
+display: inline-block;
+    font-size: 14px;
+    font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
+    letter-spacing: 2px;
+    margin: 0px auto;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background-color: #00a79d;
+    text-decoration: none;
+    vertical-align: middle;
+    border: 1px solid #00a79d;
+    line-height: normal;
+    &:hover {
+        background-color: #7ae0bb;
+        border: 1px solid #7ae0bb;
+        color: white;
+    }
+`;
 
 
 class Masonry extends Component {
@@ -70,6 +92,7 @@ const Tile = ({ src }, props) => {
             <div className="tile">
                 <img src={src} alt="Masonry Images" />
             </div>
+            <Balance>Pennybank: $53.98</Balance>
             <div className="card-body" id="itemContent">
                 <ViewItem />
                 <RemoveItem />

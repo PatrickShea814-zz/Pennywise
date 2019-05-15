@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import HomeNavBtn from "../Buttons/HomeNavBtn";
 import UserNavBtn from "../Buttons/UserNavBtn";
+import CurrentUserProfile from "../Buttons/CurrentUserProfile";
 import pennywiselogo from '../../Assets/LogoImages/whitelogo.png';
 
 const Nav = styled.nav`
@@ -21,7 +22,7 @@ const Nav = styled.nav`
 const SignInButton = styled.button`
     font-size: 18px;
     letter-spacing: 2px;
-    margin: 18px 3% 0 0;
+    margin: 1.8% 3% 0 0;
     padding: 10px 2em;
     color: #00a79d;
     background-color: #ffffff;
@@ -74,7 +75,6 @@ class HomeNav extends Component {
                     <SignInButton onClick={() => login()}>Sign In</SignInButton>
                     <HomeNavBtn navigationName={this.state.Contact}></HomeNavBtn>
                     <HomeNavBtn navigationName={this.state.About}></HomeNavBtn>
-                    <UserNavBtn navigationName={this.state.Dashboard}></UserNavBtn>
                 </Nav>
             )
         }
@@ -83,6 +83,7 @@ class HomeNav extends Component {
                 <a href={"/"} className="logo">
                     <img src={this.state.NavLogo} alt="PennyWise Logo" />
                 </a>
+                <CurrentUserProfile />
                 <UserNavBtn navigationName={this.state.Dashboard}></UserNavBtn>
             </Nav>
         )

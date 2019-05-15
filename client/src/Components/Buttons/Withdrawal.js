@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const UserNavigationBtn = styled.button`
+const Withdrawal = styled.button`
+    display: inline;
     font-size: 18px;
     letter-spacing: 2px;
-    margin: 1.8% 3% 0 0;
+    margin: 18px 3% 0 0;
     padding: 10px 2em;
     color: #00a79d;
-    background-color: #ffffff;
+    background-color: #00a79d;
     cursor: pointer;
     text-decoration: none;
     vertical-align: middle;
@@ -22,15 +23,15 @@ const UserNavigationBtn = styled.button`
         color: white;
     }
     &:active {
-        background-color: #00a79d;
+        background-color: white;
         transform: translateY(1px);
     }
 `;
 
-function UserNavBtn(props) {
+function WithdrawalButton(props) {
     return (
-        <UserNavigationBtn>{props.navigationName}</UserNavigationBtn>
+        <Withdrawal currentBalance={props.currentBalance}>Withdraw</Withdrawal>
     )
 }
 
-export default UserNavBtn;
+export default WithdrawalButton;

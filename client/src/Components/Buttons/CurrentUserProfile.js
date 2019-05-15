@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const CurrentUser = styled.button`
 font-size: 18px;
 letter-spacing: 2px;
-margin: 18px 3% 0 0;
+margin: 1.8% 3% 0 0;
 padding: 10px 2em;
 color: white;
 background-color: #7AE0BB;
@@ -39,7 +39,7 @@ const ProfilePic = styled.img`
 function CurrentUserProfile(props) {
     return (
         <CurrentUser>{props.UserName}
-            UserName
+            Tony Dang
         </CurrentUser>
     )
 }

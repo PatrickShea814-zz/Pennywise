@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const SignInUp = styled.button`
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 2px;
     margin: 0 1em 0 1em;
     font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
-    padding: 10px 1.22em;
+    padding: 0.5% 3%;
     color: #00a79d;
     background-color: #ffffff;
     cursor: pointer;

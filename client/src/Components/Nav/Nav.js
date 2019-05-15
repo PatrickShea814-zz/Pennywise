@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import styled, { css } from 'styled-components';
-<<<<<<< HEAD
-=======
+import styled from 'styled-components';
 import HomeNavBtn from "../Buttons/HomeNavBtn";
 import UserNavBtn from "../Buttons/UserNavBtn";
->>>>>>> master
 import pennywiselogo from '../../Assets/LogoImages/whitelogo.png';
 
 const Nav = styled.nav`
@@ -66,34 +63,30 @@ class HomeNav extends Component {
     handleSidebar = animation => () =>
         this.setState(prevState => ({ visible: !prevState.visible }));
     render() {
-<<<<<<< HEAD
-       
-=======
         const isLoggedIn = sessionStorage.getItem('isLoggedIn');
->>>>>>> master
         const login = this.props.auth.login
-        if(!isLoggedIn){
-        return (
+        if (!isLoggedIn) {
+            return (
+                <Nav>
+                    <a href={"/"} className="logo">
+                        <img src={this.state.NavLogo} alt="PennyWise Logo" />
+                    </a>
+                    <SignInButton onClick={() => login()}>Sign In</SignInButton>
+                    <HomeNavBtn navigationName={this.state.Contact}></HomeNavBtn>
+                    <HomeNavBtn navigationName={this.state.About}></HomeNavBtn>
+                    <UserNavBtn navigationName={this.state.Dashboard}></UserNavBtn>
+                </Nav>
+            )
+        }
+        else return (
             <Nav>
                 <a href={"/"} className="logo">
                     <img src={this.state.NavLogo} alt="PennyWise Logo" />
                 </a>
-                <SignInButton onClick={() => login()}>Sign In</SignInButton>
-                <HomeNavBtn navigationName={this.state.Contact}></HomeNavBtn>
-                <HomeNavBtn navigationName={this.state.About}></HomeNavBtn>
                 <UserNavBtn navigationName={this.state.Dashboard}></UserNavBtn>
             </Nav>
         )
     }
-    else return(
-    <Nav>
-        <a href={"/"} className="logo">
-            <img src={this.state.NavLogo} alt="PennyWise Logo" />
-        </a>
-        <UserNavBtn navigationName={this.state.Dashboard}></UserNavBtn>
-    </Nav>
-    )
-}
 
 }
 

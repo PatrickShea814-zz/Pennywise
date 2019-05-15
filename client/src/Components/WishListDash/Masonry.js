@@ -1,14 +1,9 @@
 import React, { Component } from "react";
 import WishList from "./WishList";
-<<<<<<< HEAD
-import Microlink from '@microlink/react';
-import "./WishList.css";
-=======
 import ViewItem from "../Buttons/ViewItem";
 import RemoveItem from "../Buttons/RemoveItem"
 import Microlink from '@microlink/react';
 import "../../Assets/css/WishList.css";
->>>>>>> master
 
 // let brakePoints = [350, 500, 750];
 // let images = [];
@@ -23,10 +18,7 @@ class Masonry extends Component {
 
     state = {
         url: '',
-<<<<<<< HEAD
-=======
         itemID: '',
->>>>>>> master
         images: [],
         brakePoints: [350, 500, 750],
         imgId: [1011, 883, 1074, 823, 64, 65, 839, 314, 256, 316, 92, 643]
@@ -48,10 +40,6 @@ class Masonry extends Component {
     }
 
     removeImage() {
-<<<<<<< HEAD
-        console.log("RemoveImage() function DID RUN")
-=======
->>>>>>> master
     }
 
     render() {
@@ -77,43 +65,14 @@ class Masonry extends Component {
 
 
 const Tile = ({ src }, props) => {
-    { console.log("PROPS : ", props) }
     return (
         <div className="card" id="itemCard">
             <div className="tile">
-                <Microlink
-                    className='item-shadow'
-                    url='https://www.amazon.com/PreSonus-Eris-E3-5-Professional-Multimedia/dp/B075QVMBT9?pf_rd_p=0fc3f2c4-3ed5-4d11-9995-8d7c82394713&pd_rd_wg=V65hf&pf_rd_r=Q1TYXZA2BF4822M873NB&ref_=pd_gw_cr_simh&pd_rd_w=mCjVf&pd_rd_r=9d256a36-7735-427f-880d-a18b8f52ca11'
-                    style={{ fontFamily: 'Nitti, "Microsoft YaHei", 微软雅黑, monospace' }}
-                    media={['video', 'image']}
-                    size='large'
-                    controls
-                />
+                <img src={src} alt="Masonry Images" />
             </div>
             <div className="card-body" id="itemContent">
-<<<<<<< HEAD
-                {props.price}
-                <Button
-                    bsstyle="primary"
-                    id="viewItem"
-                    className="btn"
-                    onClick={props.rem}
-                >
-                    <span>View Item</span>
-                </Button>
-                <Button
-                    bsstyle="danger"
-                    id="removeItem"
-                    className="btn"
-                    onClick={props.rem}
-                >
-                    <span>Remove</span>
-                </Button>
-                <p className="card-text" id="itemText">Price:</p>
-=======
                 <ViewItem />
                 <RemoveItem />
->>>>>>> master
             </div>
         </div>
     );

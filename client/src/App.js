@@ -6,10 +6,6 @@ import Footer from "./Components/Footer/Footer";
 import Welcome from "./Components/Content/Welcome";
 import EmptyWishList from "./Components/Content/NoItemsDash";
 import history from "./history";
-<<<<<<< HEAD
-import SideNavigation from "./Components/SideNav/SideNav";
-=======
->>>>>>> master
 import './App.scss';
 import './App.css';
 import Masonry from './Components/WishListDash/Masonry';
@@ -28,56 +24,22 @@ class App extends Component {
   }
 
   render() {
-<<<<<<< HEAD
     const { isAuthenticated } = this.props.auth;
     return (
       <div className="App">
-        <SideNavigation />
         <div className="Site-content">
           <Wrapper >
-          <NavBar {...this.props} />
-          {!isAuthenticated() ? (
-            <Welcome {...this.props} />
-          ) : (
-            <Masonry />
-          )}
+            <NavBar {...this.props} />
+            {!isAuthenticated() ? (
+              <Welcome {...this.props} />
+            ) : (
+                <Masonry />
+              )}
           </Wrapper>
         </div>
         <Footer />
       </div>
     )
-=======
-
-    if (!this.state.loggedIn) {
-      return (
-        <div className="App">
-          <div className="Site-content">
-            <Wrapper >
-              <NavBar {...this.props} />
-              <Welcome {...this.props} />
-              <Masonry />
-            </Wrapper>
-          </div>
-          <Footer />
-        </div>
-      )
-    }
-
-    else {
-      return (
-        <div className="App">
-          <div className="Site-content">
-            <Wrapper >
-              <NavBar {...this.props} />
-              <EmptyWishList />
-            </Wrapper>
-          </div>
-          <Footer />
-        </div>
-      )
-    }
-
->>>>>>> master
   }
 
 }

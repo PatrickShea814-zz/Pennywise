@@ -35,7 +35,7 @@ class EmptyWishList extends Component {
     constructor() {
         super();
         this.state = {
-            noItems: '¯' + "\\" + '_(' + 'ツ)_' + '/' + '¯',
+            noItems: '¯\\_(ツ)_/¯',
             buttonName: "Start Wishing!"
         }
     }

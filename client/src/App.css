@@ -232,7 +232,7 @@ body {
   /* 2 */
   padding: var(--space) var(--space) 0;
   width: 100%;
-  height:auto;
+  /* height:auto; */
 }
 
 .Site-content::after {
@@ -240,6 +240,7 @@ body {
   /* &nbsp; */
   display: block;
   margin-top: var(--space);
+  height: 0px;
   visibility: hidden;
 }
 

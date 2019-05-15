@@ -54,8 +54,9 @@ class HomeNav extends Component {
         }
     }
     render() {
-
+        const isLoggedIn = sessionStorage.getItem('isLoggedIn');
         const login = this.props.auth.login
+        if(!isLoggedIn){
         return (
             <Nav>
                 <a href={"/"} className="logo">
@@ -68,6 +69,16 @@ class HomeNav extends Component {
             </Nav>
         )
     }
+    else return(
+    <Nav>
+        <a href={"/"} className="logo">
+            <img src={this.state.NavLogo} alt="PennyWise Logo" />
+        </a>
+        <UserNavBtn navigationName={this.state.Dashboard}></UserNavBtn>
+    </Nav>
+    )
+}
+
 }
 
 export default HomeNav;

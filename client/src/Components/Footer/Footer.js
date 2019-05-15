@@ -2,33 +2,32 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const Footer = styled.footer`
-    margin: 0 auto;
-    width: 60%;
+    width: 100%;
+    height:auto;
+    display:flex;
+    justify-content:center;
     @media (max-width: 900px) {
         width: 90%;
     }
 `;
 
 const MainList = styled.ul`
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
+    display:flex;
+    text-align:center;
     letter-spacing: 2px;
-    padding: 30px 0 0 0;
+    margin:0 auto;
+    padding: 4% 0 0 0;
     li {
-        display: block;
         flex-basis: 0;
         flex-grow: 1;
         flex-shrink: 1;
         /* is 25 */
-        flex: none;
         width: 25%;
         /* Styles */
         list-style: none;
-        margin: 0 0 16px;
-        padding-right: 12px;
-        min-width: 100px;
-        font-size: 18px;
+        margin: 0 0 2px;
+        min-width: 150px;
+        font-size: 15px;
 
         a {
             text-decoration: none;

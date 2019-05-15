@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
+<<<<<<< HEAD
+=======
 import HomeNavBtn from "../Buttons/HomeNavBtn";
 import UserNavBtn from "../Buttons/UserNavBtn";
+>>>>>>> master
 import pennywiselogo from '../../Assets/LogoImages/whitelogo.png';
 
 const Nav = styled.nav`
@@ -63,7 +66,11 @@ class HomeNav extends Component {
     handleSidebar = animation => () =>
         this.setState(prevState => ({ visible: !prevState.visible }));
     render() {
+<<<<<<< HEAD
+       
+=======
         const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+>>>>>>> master
         const login = this.props.auth.login
         if(!isLoggedIn){
         return (

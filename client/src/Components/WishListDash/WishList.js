@@ -23,7 +23,6 @@ class WishList extends Component {
         if (columns !== this.state.columns) {
             this.setState({ columns: columns });
         }
-
     }
 
     mapChildren() {

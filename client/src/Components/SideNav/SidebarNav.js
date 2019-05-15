@@ -25,7 +25,6 @@ class UserSideNav extends Component {
 
         return (
             <div>
-                <Header as="h5">All Direction Animations</Header>
                 <Button onClick={this.handleSidebar("overlay")}>Overlay</Button>
 
                 <Sidebar.Pushable as={Segment}>
@@ -42,23 +41,16 @@ class UserSideNav extends Component {
                         <Menu.Item as="a">
                             <Icon name="home" />
                             Home
-            </Menu.Item>
+                        </Menu.Item>
                         <Menu.Item as="a">
                             <Icon name="gamepad" />
                             Games
-            </Menu.Item>
+                        </Menu.Item>
                         <Menu.Item as="a">
                             <Icon name="camera" />
                             Channels
-            </Menu.Item>
+                        </Menu.Item>
                     </Sidebar>
-
-                    <Sidebar.Pusher dimmed={dimmed && visible}>
-                        <Segment basic>
-                            <Header as="h3">Application Content</Header>
-                            <Image src="/images/wireframe/paragraph.png" />
-                        </Segment>
-                    </Sidebar.Pusher>
                 </Sidebar.Pushable>
             </div>
         );
@@ -66,3 +58,11 @@ class UserSideNav extends Component {
 };
 
 export default UserSideNav;
+
+
+// <Sidebar.Pusher dimmed={dimmed && visible}>
+//     <Segment basic>
+//         <Header as="h3">Application Content</Header>
+//         <Image src="/images/wireframe/paragraph.png" />
+//     </Segment>
+// </Sidebar.Pusher>

@@ -35,11 +35,12 @@ const SignInButton = styled.button`
     box-shadow: 0px 5px 8px #888888;
     float: right;
     &:hover {
-        background-color: #00a79d;
+        background-color: #7AE0BB;
         color: white;
     }
     &:active {
-        background-color: #7AE0BB;
+        background-color: #00a79d;
+        transform: translateY(1px);
     }
 `;
 
@@ -53,6 +54,14 @@ class HomeNav extends Component {
             NavLogo: pennywiselogo
         }
     }
+
+
+    state = {
+
+    };
+
+    handleSidebar = animation => () =>
+        this.setState(prevState => ({ visible: !prevState.visible }));
     render() {
         const isLoggedIn = sessionStorage.getItem('isLoggedIn');
         const login = this.props.auth.login
@@ -62,7 +71,7 @@ class HomeNav extends Component {
                 <a href={"/"} className="logo">
                     <img src={this.state.NavLogo} alt="PennyWise Logo" />
                 </a>
-                <SignInButton right onClick={() => login()}>Sign In</SignInButton>
+                <SignInButton onClick={() => login()}>Sign In</SignInButton>
                 <HomeNavBtn navigationName={this.state.Contact}></HomeNavBtn>
                 <HomeNavBtn navigationName={this.state.About}></HomeNavBtn>
                 <UserNavBtn navigationName={this.state.Dashboard}></UserNavBtn>

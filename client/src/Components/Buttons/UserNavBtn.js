@@ -1,35 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SignInUp = styled.button`
-    font-size: 20px;
+const UserNavigationBtn = styled.button`
+    font-size: 18px;
     letter-spacing: 2px;
-    margin: 0 1em 0 1em;
-    font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
-    padding: 10px 1.22em;
+    margin: 18px 3% 0 0;
+    padding: 10px 2em;
     color: #00a79d;
     background-color: #ffffff;
     cursor: pointer;
     text-decoration: none;
     vertical-align: middle;
     border-radius: 0px;
-    user-select: none;
     text-align: center;
-    box-shadow: 0px 5px 8px #888888;
+    line-height: normal;
     border: none;
+    box-shadow: 0px 5px 8px #888888;
+    float: right;
     &:hover {
         background-color: #00a79d;
         color: white;
     }
     &:active {
+        background-color: #7AE0BB;
         transform: translateY(1px);
     }
 `;
 
-function LoginSignin(props) {
+function UserNavBtn(props) {
     return (
-        <SignInUp>{props.AuthName}</SignInUp>
+        <UserNavigationBtn>{props.navigationName}</UserNavigationBtn>
     )
 }
 
-export default LoginSignin;
+export default UserNavBtn;

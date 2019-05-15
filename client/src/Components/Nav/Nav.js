@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
+import HomeNavBtn from "../Buttons/HomeNavBtn";
+import UserNavBtn from "../Buttons/UserNavBtn";
 import pennywiselogo from '../../Assets/LogoImages/whitelogo.png';
 
 const Nav = styled.nav`
@@ -16,30 +18,6 @@ const Nav = styled.nav`
     }
 `;
 
-const NavButton = styled.button`
-    font-size: 18px;
-    letter-spacing: 2px;
-    margin: 18px 3% 0 0;
-    padding: 10px 2em 12px 1em;
-    color: white;
-    background-color: transparent;
-    cursor: pointer;
-    text-decoration: one;
-    vertical-align: middle;
-    border-radius: 5px;
-    text-align: center;
-    line-height: normal;
-    border: transparent;
-
-    ${props => props.right && css`
-        float: right;
-    `}
-    &:hover {
-        background-color: #7ae0bb;
-        border: 2px solid white;
-    }
-`;
-
 const SignInButton = styled.button`
     font-size: 18px;
     letter-spacing: 2px;
@@ -48,35 +26,45 @@ const SignInButton = styled.button`
     color: #00a79d;
     background-color: #ffffff;
     cursor: pointer;
-    text-decoration: one;
+    text-decoration: none;
     vertical-align: middle;
-    border-radius: 5px;
+    border-radius: 0px;
     text-align: center;
     line-height: normal;
-    border: transparent;
-
-    ${props => props.right && css`
-        float: right;
-    `}
+    border: none;
+    box-shadow: 0px 5px 8px #888888;
+    float: right;
     &:hover {
         background-color: #00a79d;
         color: white;
-        
+    }
+    &:active {
+        background-color: #7AE0BB;
     }
 `;
 
 class HomeNav extends Component {
+    constructor() {
+        super();
+        this.state = {
+            Contact: "Contact Us!",
+            About: "About Us",
+            Dashboard: "Dashboard",
+            NavLogo: pennywiselogo
+        }
+    }
     render() {
-       
+
         const login = this.props.auth.login
         return (
             <Nav>
                 <a href={"/"} className="logo">
-                    <img src={pennywiselogo} alt="PennyWise Logo" />
+                    <img src={this.state.NavLogo} alt="PennyWise Logo" />
                 </a>
-                <SignInButton right onClick={()=>login()}>Sign In</SignInButton>
-                <NavButton right>Contact Us</NavButton>
-                <NavButton right>About Us</NavButton>
+                <SignInButton right onClick={() => login()}>Sign In</SignInButton>
+                <HomeNavBtn navigationName={this.state.Contact}></HomeNavBtn>
+                <HomeNavBtn navigationName={this.state.About}></HomeNavBtn>
+                <UserNavBtn navigationName={this.state.Dashboard}></UserNavBtn>
             </Nav>
         )
     }

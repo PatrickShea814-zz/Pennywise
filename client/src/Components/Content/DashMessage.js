@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Section = styled.section`
     color: white;
     font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
-    margin: 10% auto;
+    margin: 8% auto;
     text-align: center;
     font-size: 2vw;
     @media (max-width: 1000px) {
@@ -35,14 +35,15 @@ class DashMessage extends Component {
     constructor() {
         super();
         this.state = {
+            buttonName: "Start Wishing!",
             GetStartedWelcome: 'Welcome to Pennywise!',
             WelcomeMessage: 'To get started you will need to add a bank account to your profile.',
-            GetStartedAction: 'Select your account using Plaid.',
-            ActionDetails: 'Plaid allows you to securely sign into your bank institution and choose the account you wish to connect.'
+            GetStartedAction: 'Connect your account:',
+            ActionDetails: 'Securely sign into your bank portal using Plaid and select your account.'
         }
     }
 
-    componentDidMount() {
+    NewUserNoItems() {
 
         this.setState({
             GetStartedWelcome: '¯\\_(ツ)_/¯',
@@ -55,10 +56,10 @@ class DashMessage extends Component {
     render(props) {
         return (
             <Section>
-                <Title>{props.GetStartedWelcome}</Title>
-                <Subtitle>{props.WelcomeMessage}</Subtitle>
-                <Title>{props.GetStartedAction} </Title>
-                <Subtitle>{props.ActionDetails}</Subtitle>
+                <Title>{this.state.GetStartedWelcome}</Title>
+                <Subtitle>{this.state.WelcomeMessage}</Subtitle>
+                <Title>{this.state.GetStartedAction} </Title>
+                <Subtitle>{this.state.ActionDetails}</Subtitle>
                 <DownloadExtension buttonName={this.state.buttonName}></DownloadExtension>
             </Section>
         )

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DownloadExtension from '../Buttons/DownloadExtension';
 import LoginSignin from '../Buttons/SignInUp';
 import styled from 'styled-components';
+import DashMessage from './DashMessage';
 
 const Section = styled.section`
     color: white;
@@ -44,21 +45,18 @@ class Welcome extends Component {
     render() {
         const login = this.props.auth.login
         const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-        if (!isLoggedIn){
-        return (
-            <Section>
-                <Title>Wish. Save. Reward.</Title>
-                <Subtitle>Purchase your wish list items with the change saved from rounding up everyday purchases.</Subtitle>
-                <Subtitle>Are You Pennywise?<LoginSignin AuthName={this.state.AuthName} onClick={() => login()}></LoginSignin></Subtitle>
-                <Subtitle>Chrome Extension.<DownloadExtension buttonName={this.state.buttonName}></DownloadExtension></Subtitle>
-            </Section>
-        )
+        if (!isLoggedIn) {
+            return (
+                <Section>
+                    <Title>Wish. Save. Reward.</Title>
+                    <Subtitle>Purchase your wish list items with the change saved from rounding up everyday purchases.</Subtitle>
+                    <Subtitle>Are You Pennywise?<LoginSignin AuthName={this.state.AuthName} onClick={() => login()}></LoginSignin></Subtitle>
+                    <Subtitle>Chrome Extension.<DownloadExtension buttonName={this.state.buttonName}></DownloadExtension></Subtitle>
+                </Section>
+            )
         }
         else return (
-            <Section>
-                <Title>Wish. Save. Reward.</Title>
-                <Subtitle>Purchase your wish list items with the change saved from rounding up everyday purchases.</Subtitle>
-            </Section>
+            <DashMessage />
         )
     }
 }

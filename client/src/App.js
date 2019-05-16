@@ -6,10 +6,11 @@ import Footer from "./Components/Footer/Footer";
 import Welcome from "./Components/Content/Welcome";
 import EmptyWishList from "./Components/Content/NoItemsDash";
 import history from "./history";
-import './App.scss';
 import './App.css';
 import Masonry from './Components/WishListDash/Masonry';
-import NextItem from './Components/Content/NextItem';
+import DashInfo from './Components/Content/DashInfo/DashInfo';
+import DashMessage from './Components/Content/DashMessage';
+
 
 class App extends Component {
 
@@ -32,11 +33,13 @@ class App extends Component {
           <Wrapper >
             <NavBar {...this.props} />
             {!isAuthenticated() ? (
-              <Welcome {...this.props} />
+              <div>
+                <DashInfo />
+                <Masonry />
+              </div>
             ) : (
                 <div>
-                  <NextItem />
-                  <Masonry />
+                  <DashMessage />
                 </div>
               )}
           </Wrapper>
@@ -45,7 +48,6 @@ class App extends Component {
       </div>
     )
   }
-
 }
 
 export default App;

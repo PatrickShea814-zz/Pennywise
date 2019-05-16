@@ -4,26 +4,22 @@ import styled from 'styled-components';
 const Withdrawal = styled.button`
     font-size: 18px;
     letter-spacing: 2px;
-    margin: 1.8% 3% 0 0;
-    padding: 10px 2em;
+    padding: 12px 1.5em;
+    margin-top: 5%;
+    width: 50%;
     color: white;
-    background-color: #00a79d;
+    background-color: #7ae0bb;
     cursor: pointer;
     text-decoration: none;
     vertical-align: middle;
-    border-radius: 0px;
+    border: 1px solid #7ae0bb;
+    box-shadow: 0px 5px 8px #888888;
     text-align: center;
     line-height: normal;
-    border: none;
-    box-shadow: 0px 5px 8px #888888;
-    float: right;
     &:hover {
-        background-color: #7AE0BB;
+        background-color: #00a79d;
+        border: 1px solid #00a79d;
         color: white;
-    }
-    &:active {
-        background-color: white;
-        transform: translateY(1px);
     }
 `;
 

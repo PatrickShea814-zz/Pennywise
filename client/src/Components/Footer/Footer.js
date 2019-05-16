@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Footer = styled.footer`
     width: 100%;
-    height:auto;
+    max-height: 100px;
     display:flex;
     justify-content:center;
     @media (max-width: 900px) {
@@ -12,11 +12,11 @@ const Footer = styled.footer`
 `;
 
 const MainList = styled.ul`
-    display:flex;
-    text-align:center;
+    display: flex;
+    text-align: center;
     letter-spacing: 2px;
-    margin:0 auto;
-    padding: 4% 0 0 0;
+    margin: 0 auto;
+    padding: 3% 0 3% 0;
     li {
         flex-basis: 0;
         flex-grow: 1;

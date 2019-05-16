@@ -38,7 +38,7 @@ const ProfilePic = styled.img`
 
 function CurrentUserProfile(props) {
     return (
-        <CurrentUser>{props.UserName}
+        <CurrentUser className="bm-burger-button">{props.UserName}
             Tony Dang
         </CurrentUser>
     )

@@ -10,17 +10,7 @@ import './App.css';
 import Masonry from './Components/WishListDash/Masonry';
 import DashInfo from './Components/Content/DashInfo/DashInfo';
 import DashMessage from './Components/Content/DashMessage';
-import {
-  Button,
-  Checkbox,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  Menu,
-  Segment,
-  Sidebar
-} from "semantic-ui-react";
+import UserDropdown from './Components/SideNav/UserDropdown';
 
 
 class App extends Component {
@@ -46,6 +36,7 @@ class App extends Component {
     const { isAuthenticated } = this.props.auth;
     return (
       <div className="App">
+      <UserDropdown />
         <div className="Site-content">
           <Wrapper >
             <NavBar {...this.props} />

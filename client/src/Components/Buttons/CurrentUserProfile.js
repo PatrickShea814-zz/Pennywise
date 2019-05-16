@@ -1,6 +1,7 @@
 import React from 'react';
 import GradientOwl from "../../Assets/LogoImages/GradientOwl.png";
 import styled from 'styled-components';
+import '../SideNav/User.css';
 
 const CurrentUser = styled.button`
 font-size: 18px;

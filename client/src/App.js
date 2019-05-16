@@ -1,5 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
+import './Components/DarkMode/styles.scss';
 import Wrapper from "./Components/Wrapper/Wrapper";
 import NavBar from "./Components/Nav/Nav.js";
 import Footer from "./Components/Footer/Footer";
@@ -36,7 +37,7 @@ class App extends Component {
     const { isAuthenticated } = this.props.auth;
     return (
       <div className="App">
-      <UserDropdown />
+        <UserDropdown />
         <div className="Site-content">
           <Wrapper >
             <NavBar {...this.props} />

@@ -27,8 +27,9 @@ const SignInUp = styled.button`
 `;
 
 function LoginSignin(props) {
+    console.log('HELLO', props.auth.login)
     return (
-        <SignInUp>{props.AuthName}</SignInUp>
+        <SignInUp onClick={()=>props.auth.login()}>{props.AuthName}</SignInUp>
     )
 }
 

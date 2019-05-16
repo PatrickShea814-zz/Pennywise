@@ -7,7 +7,7 @@ import history from "./history";
 import Plaid from "./Components/Plaid/index";
 import Masonry from "./Components/WishListDash/Masonry";
 import Transactions from "./Components/Transactions";
-import Wrapper from "./Components/Wrapper/Wrapper"
+
 import WishList from "./Components/WishListDash/WishList";
 
 const auth = new Auth();
@@ -19,7 +19,8 @@ const handleAuthentication = ({ location }) => {
 };
 
 export const makeMainRoutes = () => {
-  const loggedIn = sessionStorage.getItem('isLoggedIn')
+  const loggedIn = sessionStorage.getItem('isLoggedIn');
+  const existingUser = sessionStorage.getItem('existingUser');
   return (
     <Router history={history}>
 
@@ -27,13 +28,13 @@ export const makeMainRoutes = () => {
         <Route path="/" render={props =>
           !auth.isAuthenticated() ?
             <App auth={auth} {...props} /> :
-            <App auth={auth} {...props} />
-        }
+            !existingUser ? <Plaid /> :
+              <Masonry />
+          }
         /> :
 
         <Route
-          path="/transactions"
-          render={props =>
+          path="/transactions" render={props =>
             !auth.isAuthenticated() ? (
               <Redirect to="/" />
             ) : (
@@ -43,7 +44,13 @@ export const makeMainRoutes = () => {
         />
         <Route
           path="/plaid"
-          component={Plaid}
+          render={props =>
+            !auth.isAuthenticated() ? (
+              <Redirect to="/" />
+            ) : (
+              <Plaid/>
+            )
+          }
           />
         
         <Route

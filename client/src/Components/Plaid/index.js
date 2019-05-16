@@ -50,7 +50,10 @@ class App extends Component {
           user_id: user_id
         }
     })
-    .then(res => console.log('USER UPDATE SUCCESS', res.data))
+    .then(res => {console.log('USER UPDATE SUCCESS', res.data)
+      sessionStorage.setItem('existingUser', true)
+      history.replace('/')
+    })
     .catch((err) => { console.log("userID post failed", err) });
 
     // axios.request({

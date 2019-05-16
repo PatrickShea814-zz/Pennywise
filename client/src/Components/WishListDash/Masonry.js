@@ -65,6 +65,7 @@ class Masonry extends Component {
     }
 
     render() {
+        const existingUser = sessionStorage.getItem('existingUser');
         return (
             <div className="container">
                 <div className="masonry-container">

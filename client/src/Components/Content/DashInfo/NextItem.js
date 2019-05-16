@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import WithdrawalButton from '../Buttons/Withdrawal'
+import WithdrawalButton from '../../Buttons/Withdrawal'
 import Microlink from '@microlink/react'
 import styled from 'styled-components';
 
@@ -7,17 +7,22 @@ const Section = styled.section`
     font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
     border: 1px solid white;
     width: 40%;
-    margin: 0 auto;
     text-align: center;
+    justify-content: center;
+    margin: 0 auto;
     font-size: 2vw;
     @media (max-width: 1000px) {
         font-size: 2vw;
     }
     @media (max-width: 800px) {
         font-size: 3vw;
-        margin: 0 auto;
-        text-align: center;
     }
+`;
+
+const NextItemWrapper = styled.div`
+    padding: 3%;
+    text-align: center;
+    margin: 0;
 `;
 
 const NextMicroCard = styled(Microlink)`
@@ -41,7 +46,7 @@ class NextItem extends Component {
     }
     render() {
         return (
-            <Section>
+            <NextItemWrapper>
                 <NextMicroCard
                     className='item-shadow'
                     url={this.state.nextItemUrl}
@@ -49,8 +54,8 @@ class NextItem extends Component {
                     media={['video', 'image']}
                     controls
                 />
-                <WithdrawalButton />
-            </Section>
+            </NextItemWrapper>
+
         )
     }
 }

@@ -45,7 +45,6 @@ class EmptyWishList extends Component {
                 <Title>{this.state.noItems}</Title>
                 <Subtitle>You currently do not have any wish list items!</Subtitle>
                 <Title>Have all of your wishes came true?</Title>
-
                 <Subtitle>Download our Chrome Extension to start adding to your wish list.</Subtitle>
                 <DownloadExtension buttonName={this.state.buttonName}></DownloadExtension>
             </Section>

@@ -8,6 +8,7 @@ import Welcome from "./Components/Content/Welcome";
 import EmptyWishList from "./Components/Content/NoItemsDash";
 import history from "./history";
 import './App.css';
+import './Components/DarkMode/styles.scss';
 import Masonry from './Components/WishListDash/Masonry';
 import DashInfo from './Components/Content/DashInfo/DashInfo';
 import DashMessage from './Components/Content/DashMessage';
@@ -37,18 +38,17 @@ class App extends Component {
     const { isAuthenticated } = this.props.auth;
     return (
       <div className="App">
-        <UserDropdown />
+
         <div className="Site-content">
           <Wrapper >
             <NavBar {...this.props} />
             {!isAuthenticated() ? (
-              <div>
-                <DashInfo />
-                <Masonry />
-              </div>
+              <Welcome {...this.props} />
             ) : (
                 <div>
-                  <DashMessage />
+                  <UserDropdown />
+                  <DashInfo />
+                  <Masonry />
                 </div>
               )}
           </Wrapper>

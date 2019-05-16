@@ -10,13 +10,29 @@ import './App.css';
 import Masonry from './Components/WishListDash/Masonry';
 import DashInfo from './Components/Content/DashInfo/DashInfo';
 import DashMessage from './Components/Content/DashMessage';
+import {
+  Button,
+  Checkbox,
+  Grid,
+  Header,
+  Icon,
+  Image,
+  Menu,
+  Segment,
+  Sidebar
+} from "semantic-ui-react";
 
 
 class App extends Component {
 
   state = {
-    loggedIn: false
+    loggedIn: false,
+    dimmed: true,
+    visible: false
   }
+
+  handleSidebar = animation => () =>
+    this.setState(prevState => ({ visible: !prevState.visible }));
 
   componentDidMount() {
     if (this.props.auth.isAuthenticated()) {
@@ -26,6 +42,7 @@ class App extends Component {
   }
 
   render() {
+    const { dimmed, visible } = this.state;
     const { isAuthenticated } = this.props.auth;
     return (
       <div className="App">

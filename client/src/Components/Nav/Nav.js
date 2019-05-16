@@ -83,7 +83,7 @@ class HomeNav extends Component {
                 <a href={"/"} className="logo">
                     <img src={this.state.NavLogo} alt="PennyWise Logo" />
                 </a>
-                <CurrentUserProfile />
+                <CurrentUserProfile onClick={this.handleSidebar("overlay")} />
                 <UserNavBtn navigationName={this.state.Dashboard}></UserNavBtn>
             </Nav>
         )

@@ -7,17 +7,28 @@ const BalanceWrap = styled.div`
     border: 1px solid white;
     border-radius: 10px;
     margin: 0 5%;
-    text-align: center;
-    justify-content: center;
     padding: 2% 0 2% 0;
+    background-color: white;
 `;
 
 const Balance = styled.h1`
     font-size: 18px;
     padding: 0.5%;
     letter-spacing: 2px;
-    margin: 0 auto;
-    color: white;
+    margin: 2% auto;
+    color: #00a79d;
+    background-color: transparent;
+    text-decoration: none;
+    vertical-align: middle;
+    line-height: normal;
+`;
+
+const NextItem = styled.h1`
+    font-size: 18px;
+    padding: 0.5%;
+    letter-spacing: 2px;
+    margin: 2% auto;
+    color: #00a79d;
     background-color: transparent;
     text-decoration: none;
     vertical-align: middle;
@@ -29,6 +40,7 @@ class MyBalance extends Component {
     render() {
         return (
             <BalanceWrap>
+                <NextItem>Next Item: $55.98</NextItem>
                 <Balance>Pennybank Balance: $53.49</Balance>
                 <WithdrawalButton />
             </BalanceWrap>

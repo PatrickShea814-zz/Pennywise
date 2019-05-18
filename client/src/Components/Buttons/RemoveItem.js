@@ -5,7 +5,7 @@ function RemoveItem(props) {
     return (
         <Button
             src={props.itemID}
-            bsStyle="danger"
+            bsstyle="danger"
             id="removeItem"
             className="btn"
             onClick={props.rem}

@@ -2,9 +2,13 @@ import React, { Component } from "react";
 import styled from 'styled-components';
 import WishList from "./WishList";
 import ViewItem from "../Buttons/ViewItem";
-import RemoveItem from "../Buttons/RemoveItem"
+import RemoveItem from "../Buttons/RemoveItem";
+import history from "../../history";
 import Microlink from '@microlink/react';
 import "../../Assets/css/WishList.css";
+import { Route, Redirect } from 'react-router'
+import DashMessage from "../Content/DashMessage";
+
 
 let brakePoints = [350, 500, 750];
 let images = [];
@@ -48,7 +52,8 @@ class Masonry extends Component {
 
     displayImages() {
         console.log("Display Image");
-        const imgId = [1011, 883, 1074, 823, 64, 65, 839, 314, 256, 316, 92, 643];
+        // const imgId = [1011, 883, 1074, 823, 64, 65, 839, 314, 256, 316, 92, 643];
+        const imgId = [];
         for (let i = 0; i < imgId.length; i++) {
             const ih = 200 + Math.floor(Math.random() * 10) * 15;
             let newArr = this.state.images;
@@ -58,10 +63,20 @@ class Masonry extends Component {
     }
 
     componentDidMount() {
-        this.displayImages();
+        if(this.state.images.length > 0) {
+            console.log("img length ", this.state.images.length);
+            this.displayImages();
+        }
+        else {
+            this.showDashMessage();
+        }
     }
 
-    removeImage() {
+    showDashMessage(){
+        console.log("test")
+        return(
+            history.replace('/dashmessage')
+        )
     }
 
     render() {

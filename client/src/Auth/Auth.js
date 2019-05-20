@@ -116,13 +116,12 @@ export default class Auth {
           if(!res.data.existingUser){
             console.log('This user must first register with Plaid.')
             sessionStorage.setItem('existingUser', false)
-            history.replace('/plaid')
+        
           }
           else {
             console.log("User Model = ", this.userProfile)
             console.log('This should already be registered with Plaid.')
             sessionStorage.setItem('existingUser',true)
-            history.replace('/masonry')
           }
 
         }).catch( (err) => {console.log("userID post failed", err)})

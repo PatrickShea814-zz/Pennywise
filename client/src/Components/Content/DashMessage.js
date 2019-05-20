@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DownloadExtension from '../Buttons/DownloadExtension';
 import styled from 'styled-components';
+import Plaid from '../Plaid';
 
 const Section = styled.section`
     color: white;
@@ -48,13 +49,25 @@ class DashMessage extends Component {
         this.setState({
             GetStartedWelcome: '¯\\_(ツ)_/¯',
             WelcomeMessage: 'You currently do not have any wish list items!',
-            GetStartedAction: 'Have all of your wishes came true?',
+            GetStartedAction: 'Have all of your wishes come true?',
             ActionDetails: 'Download our Chrome Extension to start adding to your wish list.'
         });
     }
 
     render(props) {
+        const existingUser = sessionStorage.getItem('existingUser');
+        if(!existingUser && this.props.auth.isAuthenticated()){
         return (
+            <Section>
+                <Title>{this.state.GetStartedWelcome}</Title>
+                <Subtitle>{this.state.WelcomeMessage}</Subtitle>
+                <Title>{this.state.GetStartedAction} </Title>
+                <Subtitle>{this.state.ActionDetails}</Subtitle>
+                <Plaid buttonName={this.state.buttonName}></Plaid>
+            </Section>
+        )
+        }
+        else return (
             <Section>
                 <Title>{this.state.GetStartedWelcome}</Title>
                 <Subtitle>{this.state.WelcomeMessage}</Subtitle>

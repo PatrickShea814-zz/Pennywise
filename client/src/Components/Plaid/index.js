@@ -8,10 +8,15 @@ import history from "../../history";
 
 class App extends Component {
 
- state = {
+  state = {
 
-   publicKey: ''
+    publicKey: ''
+ 
+  }
 
+ constructor(props){
+   super(props)
+   this.getPublicKey.bind(this)
  }
 
   getPublicKey = async function(){
@@ -19,11 +24,10 @@ class App extends Component {
     return await axios.get('api/users/getPublicKey')
     
   }
-
- componentDidMount(){
+  
+  componentDidMount = () =>{
    this.getPublicKey()
     .then(res => {
-      console.log('ARGGH', res.data)
       this.setState({ 
       publicKey: res.data.PLAID_PUBLIC_KEY
       })
@@ -69,7 +73,7 @@ class App extends Component {
 
 
   render() {
-    console.log('THIS IS OUR PUBLIC KEY', this.state.publicKey)
+    
     return (
       <div className="row justify-content-md-center">
         <PlaidLink

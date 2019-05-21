@@ -9,6 +9,7 @@ import Masonry from "./Components/WishListDash/Masonry";
 import Transactions from "./Components/Transactions";
 import Wrapper from "./Components/Wrapper/Wrapper"
 import WishList from "./Components/WishListDash/WishList";
+import ContactForm from "./Components/ContactUs/ContactUs";
 
 const auth = new Auth();
 
@@ -44,8 +45,13 @@ export const makeMainRoutes = () => {
         <Route
           path="/plaid"
           component={Plaid}
-          />
-        
+        />
+
+        <Route
+          path="/contact"
+          component={ContactForm}
+        />
+
         <Route
           path="/callback"
           render={props => {

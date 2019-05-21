@@ -13,6 +13,7 @@ import Masonry from './Components/WishListDash/Masonry';
 import DashInfo from './Components/Content/DashInfo/DashInfo';
 import DashMessage from './Components/Content/DashMessage';
 import UserDropdown from './Components/SideNav/UserDropdown';
+import ContactForm from './Components/ContactUs/ContactUs';
 
 
 class App extends Component {

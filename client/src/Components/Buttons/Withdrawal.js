@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Withdrawal = styled.button`
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 2px;
-    padding: 12px 1.5em;
+    padding: 10px 1em;
     margin-top: 5%;
-    width: 50%;
+    width: 90%;
     color: white;
     background-color: #7ae0bb;
     cursor: pointer;
@@ -18,7 +18,7 @@ const Withdrawal = styled.button`
     line-height: normal;
     &:hover {
         background-color: #00a79d;
-        border: 1px solid #00a79d;
+        border: none;
         color: white;
     }
 `;

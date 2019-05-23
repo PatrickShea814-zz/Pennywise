@@ -4,11 +4,12 @@ import UpcomingItem from './UpcomingItem';
 import MyBalance from './UserBalance';
 
 const DashWrap = styled.div`
-display: flex;
+    display: flex;
+    border-bottom: 1px solid white;
     text-align: center;
     letter-spacing: 2px;
     margin: 0 auto;
-    padding: 3% 0 3% 0;
+    padding: 1% 0 2% 0;
     width: 70%;
     justify-content: center;
 `;

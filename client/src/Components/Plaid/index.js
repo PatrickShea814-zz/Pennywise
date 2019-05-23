@@ -54,6 +54,7 @@ class App extends Component {
         }
     })
     .then(res => console.log('USER UPDATE SUCCESS', res.data))
+    .then(res => history.replace('/masonry'))
     .catch((err) => { console.log("userID post failed", err) });
 
     // axios.request({

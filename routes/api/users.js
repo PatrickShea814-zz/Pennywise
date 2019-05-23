@@ -19,7 +19,7 @@ router
   .route("/transactions/:id")
   .get(controller.transactions)
 
-router 
+router
   .route("/auth")
   .post(controller.authAPI)
 

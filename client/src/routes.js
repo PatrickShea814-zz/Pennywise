@@ -64,8 +64,12 @@ export const makeMainRoutes = () => {
         <Route
           path="/plaid"
           component={Plaid}
-          />
-        
+        />
+
+        <Route
+          path="/contact"
+        />
+
         <Route
           path="/callback"
           render={props => {

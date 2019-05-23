@@ -33,6 +33,7 @@
 
 #itemCard:hover {
     transform: scale(1.01);
+    box-shadow: 0 2px 82px rgba(0, 0, 0, .156863);
     /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 

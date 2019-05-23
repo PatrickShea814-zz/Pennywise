@@ -13,6 +13,7 @@ import Masonry from './Components/WishListDash/Masonry';
 import DashInfo from './Components/Content/DashInfo/DashInfo';
 import DashMessage from './Components/Content/DashMessage';
 import UserDropdown from './Components/SideNav/UserDropdown';
+import AboutUs from "./Components/AboutUs/AboutUs";
 
 
 class App extends Component {
@@ -38,26 +39,22 @@ class App extends Component {
     const { isAuthenticated } = this.props.auth;
     return (
       <div className="App">
-
-        <div className="Site-content">
-          <Wrapper >
-            <NavBar {...this.props} />
-            {!isAuthenticated() ? (
-              <div>
-                <DashMessage />
-                {/*<Masonry />*/}
-              </div>
-            ) : (
-                <div>
-                  <DashInfo />
-                </div>
-              )}
-          </Wrapper>
+        <Wrapper >
+          <NavBar {...this.props} />
           {!isAuthenticated() ? (
-            <Footer /> ) : (
-              <div>{null}</div>
-          )}
-        </div>
+            <div>
+              <Welcome {...this.props} />
+              <AboutUs />
+            </div>
+          ) : (
+              <div>
+                <UserDropdown />
+                <DashInfo />
+                <Masonry />
+              </div>
+            )}
+        </Wrapper>
+        <Footer />
       </div>
     )
   }

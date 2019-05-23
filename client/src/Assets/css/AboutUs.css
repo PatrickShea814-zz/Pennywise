@@ -1,0 +1,85 @@
+.about-us {
+    color: white;
+    font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
+    margin: 8% 5%;
+    font-size: 1.5vw;
+    @media (max-width: 1000px) {
+        font-size: 1.5vw;
+    }
+    @media (max-width: 800px) {
+        font-size: 3vw;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.featured-panes {
+    display: flex;
+    justify-content: space-between;
+}
+
+hr {
+    background-color: white;
+    border: 1px solid white;
+}
+
+.pane {
+    font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
+    height: 180px;
+    width: 320px;
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    padding: 1%;
+    box-shadow: 0px 5px 8px #888888;
+    margin: 10px;
+    transition: .2s ease-in-out;
+}
+
+.pane:hover {
+    box-shadow: 0 2px 82px rgba(0, 0, 0, .156863);
+    transform: scale(1.01);
+}
+
+.socialProfiles {
+    display: flex;
+    justify-content: space-between;
+    margin: 10%;
+}
+
+.socialProfiles a {
+    font-size: 25px;
+}
+
+.pane-image {
+    width: 30%;
+    height: auto;
+    float: left;
+    margin: 5px;
+    border-radius: 50%;
+}
+
+.website {
+    color: #00a79d;
+}
+
+.resume {
+    color: #ff0000;
+}
+
+.github {
+    color: #767676;
+}
+
+.linkedin {
+    color: #0077B5;
+}
+
+@media (max-width: 340px) {
+    .pane {
+        height: auto;
+    }
+    .pane-image {
+        width: 90%;
+    }
+}

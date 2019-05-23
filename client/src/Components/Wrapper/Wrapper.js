@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const PageWrapper = styled.header`
+height: 100%;
 background:
 linear-gradient(225deg, #7ae0bb, #00a79d);
-background-size: 100% 100%;
 
 -webkit-animation: AnimationName 30s ease infinite;
 -moz-animation: AnimationName 30s ease infinite;
@@ -32,19 +32,18 @@ animation: AnimationName 30s ease infinite;
    50%{background-position:100% 50%}
    100%{background-position:0% 50%}
 }
-   height: 100%;
 `;
 
 class Wrapper extends Component {
-    
-    render(props) {
-      
-        return (
-            <PageWrapper>
-              {this.props.children}
-            </PageWrapper>
-        )
-    }
+
+   render(props) {
+
+      return (
+         <PageWrapper>
+            {this.props.children}
+         </PageWrapper>
+      )
+   }
 }
 
 export default Wrapper;

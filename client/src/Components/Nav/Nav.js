@@ -56,11 +56,6 @@ class HomeNav extends Component {
         }
     }
 
-
-    state = {
-
-    };
-
     handleSidebar = animation => () =>
         this.setState(prevState => ({ visible: !prevState.visible }));
     render() {
@@ -73,7 +68,7 @@ class HomeNav extends Component {
                         <img src={this.state.NavLogo} alt="PennyWise Logo" />
                     </a>
                     <SignInButton onClick={() => login()}>Sign In</SignInButton>
-                    <HomeNavBtn navigationName={this.state.Contact}></HomeNavBtn>
+                    <HomeNavBtn onClick={() => this.props.history.replace()} navigationName={this.state.Contact}></HomeNavBtn>
                     <HomeNavBtn navigationName={this.state.About}></HomeNavBtn>
                 </Nav>
             )

@@ -43,17 +43,21 @@ class App extends Component {
           <Wrapper >
             <NavBar {...this.props} />
             {!isAuthenticated() ? (
-              <Welcome {...this.props} />
+              <div>
+                <DashMessage />
+                {/*<Masonry />*/}
+              </div>
             ) : (
                 <div>
-                  <UserDropdown />
                   <DashInfo />
-                  <Masonry />
                 </div>
               )}
           </Wrapper>
+          {!isAuthenticated() ? (
+            <Footer /> ) : (
+              <div>{null}</div>
+          )}
         </div>
-        <Footer />
       </div>
     )
   }

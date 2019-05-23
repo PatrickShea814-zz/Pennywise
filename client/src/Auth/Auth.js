@@ -2,6 +2,7 @@ import auth0 from 'auth0-js';
 import { AUTH_CONFIG } from './auth0-variables';
 import history from '../history';
 import axios from "axios";
+import { access } from 'fs';
 
 export default class Auth {
 
@@ -44,9 +45,10 @@ export default class Auth {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
-        this.getProfile(function(err, res){
+        {/*this.getProfile(function(err, res){
           err ? console.log(err) : console.log('This is what I have', res)
-        });
+        });*/}
+        this.getProfile(authResult);
       } else if (err) {
         history.replace('/home');
         console.log(err);
@@ -64,6 +66,7 @@ export default class Auth {
   }
 
   setSession(authResult) {
+
     // Set isLoggedIn flag in localStorage
     sessionStorage.setItem('isLoggedIn', 'true');
 
@@ -85,7 +88,6 @@ export default class Auth {
     this.auth0.checkSession({}, (err, authResult) => {
        if (authResult && authResult.accessToken && authResult.idToken) {
          this.setSession(authResult);
-         this.getProfile();
        } else if (err) {
          this.logout();
          console.log(err);
@@ -95,6 +97,7 @@ export default class Auth {
   }
 
   getProfile(cb) {
+
     const accessToken = sessionStorage.getItem('accessToken');
     this.auth0.client.userInfo(accessToken, (err, profile) => {
       if (profile) {
@@ -116,13 +119,15 @@ export default class Auth {
             history.replace('/plaid')
           }
           else {
+            console.log("User Model = ", this.userProfile)
             console.log('This should already be registered with Plaid.')
             sessionStorage.setItem('existingUser',true)
             history.replace('/masonry')
           }
+
         }).catch( (err) => {console.log("userID post failed", err)})
       }
-      cb(err, profile);
+      // cb(err, profile);
     });
   }
 

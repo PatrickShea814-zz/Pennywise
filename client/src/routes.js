@@ -7,6 +7,7 @@ import history from "./history";
 import Plaid from "./Components/Plaid/index";
 import Masonry from "./Components/WishListDash/Masonry";
 import Transactions from "./Components/Transactions";
+import DashMessage from "./Components/Content/DashMessage";
 import Wrapper from "./Components/Wrapper/Wrapper"
 import WishList from "./Components/WishListDash/WishList";
 
@@ -29,8 +30,17 @@ export const makeMainRoutes = () => {
             <App auth={auth} {...props} /> :
             <App auth={auth} {...props} />
         }
-        /> :
-
+        />
+        <Route
+          path="/dashmessage"
+          render={props =>
+            !auth.isAuthenticated() ? (
+              <Redirect to="/" />
+            ) : (
+                <DashMessage auth={auth} {...props} />
+              )
+          }
+        />
         <Route
           path="/transactions"
           render={props =>
@@ -40,6 +50,16 @@ export const makeMainRoutes = () => {
                 <Transactions auth={auth} {...props} />
               )
           }
+        />
+        <Route
+        path="/masonry"
+        render={props =>
+          !auth.isAuthenticated() ? (
+            <Redirect to="/" />
+          ) : (
+              <Masonry auth={auth} {...props} />
+            )
+        }
         />
         <Route
           path="/plaid"

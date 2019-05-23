@@ -5,7 +5,7 @@ function ViewItem(props) {
     return (
         <Button
             src={props.url}
-            bsStyle="primary"
+            bsstyle="primary"
             id="viewItem"
             className="btn"
             onClick={props.rem}

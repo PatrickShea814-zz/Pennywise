@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import MemberCard from './MemberCard';
 import MemberInfo from './MemberInfo';
@@ -14,9 +15,7 @@ font-size: 2em;
 `;
 
 const Section = styled.section`
-    color: white;
-    font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
-    margin: 8% 5%;
+    margin: 10px 0;
     @media (max-width: 1000px) {
     }
     @media (max-width: 800px) {
@@ -27,8 +26,6 @@ const Section = styled.section`
 `;
 
 const Subtitle = styled.p`
-    width: 50%;
-    margin: 0 0 20px 0;
     @media (max-width: 800px) {
         margin: 0 auto;
         text-align: center;
@@ -43,21 +40,26 @@ class AboutUs extends Component {
         }
     }
     render() {
-        const featuredPanes = MemberInfo;
         return (
             <div className="about-us">
                 <AboutTitle>About Us</AboutTitle>
                 <hr />
-                <div className="featured-panes">
-                    {
-                        featuredPanes.map((item, index) => {
-                            return <MemberCard key={index} name={item.name} description={item.description} src={this.state.ProfilePic} class={item.class} />
-                        })
-                    }
-                </div>
-                <Section>
-                    <Subtitle>Hello we are 4 memebers of pennywise and started this while in our Georgia Tech Bootcamp program as a final project. Hope you like it. If not GTFO.</Subtitle>
-                </Section>
+                <Row>
+                    <Col lg="7">
+                        <div className="featured-panes">
+                            {
+                                MemberInfo.map((item, index) => {
+                                    return <MemberCard key={index} name={item.name} description={item.description} src={this.state.ProfilePic} class={item.class} />
+                                })
+                            }
+                        </div>
+                    </Col>
+                    <Col>
+                        <Section>
+                            <Subtitle>Hello we are 4 memebers of pennywise and started this while in our Georgia Tech Bootcamp program as a final project. Hope you like it. If not GTFO.</Subtitle>
+                        </Section>
+                    </Col>
+                </Row>
             </div>
         )
     }

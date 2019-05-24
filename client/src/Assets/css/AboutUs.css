@@ -1,5 +1,4 @@
 .about-us {
-    color: white;
     font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
     margin: 8% 5%;
     font-size: 1.5vw;
@@ -15,7 +14,8 @@
 
 .featured-panes {
     display: flex;
-    justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 hr {
@@ -25,7 +25,7 @@ hr {
 
 .pane {
     font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
-    height: 180px;
+    height: auto;
     width: 320px;
     background-color: white;
     border: 1px solid #d9d9d9;
@@ -42,20 +42,20 @@ hr {
 }
 
 .socialProfiles {
-    display: flex;
-    justify-content: space-between;
-    margin: 10%;
+    margin: 0;
+    height: 30px;
+    text-align: center;
 }
 
 .socialProfiles a {
     font-size: 25px;
+    padding: 0 5%;
 }
 
 .pane-image {
     width: 30%;
     height: auto;
-    float: left;
-    margin: 5px;
+    margin: 5% auto;
     border-radius: 50%;
 }
 

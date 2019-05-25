@@ -8,14 +8,19 @@ import { FaRegFilePdf } from 'react-icons/fa';
 import { FaRegIdCard } from 'react-icons/fa';
 
 const MemberName = styled.p`
+margin: 0;
+padding: 2% 0;
 color: #00a79d;
 font-size: 18px;
 font-weight: bold;
+cursor: default;
 `;
 
 const AboutMember = styled.p`
+margin: 0;
 font-size: 16px;
 min-height: 50px;
+cursor: default;
 `;
 
 class MemberCard extends Component {
@@ -26,7 +31,6 @@ class MemberCard extends Component {
                     <Col>
                         <img className="pane-image" src={this.props.photo} alt={this.props.name} />
                     </Col>
-
                 </Row>
                 <Row>
                     <Col>
@@ -39,10 +43,10 @@ class MemberCard extends Component {
                     </Col>
                 </Row>
                 <div className="socialProfiles">
-                    <a href="/#"><FaLinkedin className="linkedin"></FaLinkedin></a>
-                    <a href="/#"><FaGithub className="github"></FaGithub></a>
-                    <a href="/#"><FaRegFilePdf className="resume"></FaRegFilePdf></a>
-                    <a href="/#"><FaRegIdCard className="website"></FaRegIdCard></a>
+                    <a href={this.props.linkedin}><FaLinkedin className="linkedin"></FaLinkedin></a>
+                    <a href={this.props.github}><FaGithub className="github"></FaGithub></a>
+                    <a href={this.props.resume}><FaRegFilePdf className="resume"></FaRegFilePdf></a>
+                    <a href={this.props.website}><FaRegIdCard className="website"></FaRegIdCard></a>
                 </div>
             </Container>
         )

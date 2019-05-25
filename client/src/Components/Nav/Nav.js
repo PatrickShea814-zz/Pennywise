@@ -52,7 +52,7 @@ class HomeNav extends Component {
             Contact: "Contact Us!",
             About: "About Us",
             Dashboard: "Dashboard",
-            NavLogo: pennywiselogo
+            NavLogo: pennywiselogo,
         }
     }
 
@@ -68,7 +68,7 @@ class HomeNav extends Component {
                         <img src={this.state.NavLogo} alt="PennyWise Logo" />
                     </a>
                     <SignInButton onClick={() => login()}>Sign In</SignInButton>
-                    <HomeNavBtn onClick={() => this.props.history.replace()} navigationName={this.state.Contact}></HomeNavBtn>
+                    <HomeNavBtn navigationName={this.state.Contact}></HomeNavBtn>
                     <HomeNavBtn navigationName={this.state.About}></HomeNavBtn>
                 </Nav>
             )

@@ -10,6 +10,7 @@ import Transactions from "./Components/Transactions";
 import DashMessage from "./Components/Content/DashMessage";
 import Wrapper from "./Components/Wrapper/Wrapper"
 import WishList from "./Components/WishListDash/WishList";
+import AboutUs from "./Components/AboutUs/AboutUs";
 
 const auth = new Auth();
 
@@ -52,24 +53,19 @@ export const makeMainRoutes = () => {
           }
         />
         <Route
-        path="/masonry"
-        render={props =>
-          !auth.isAuthenticated() ? (
-            <Redirect to="/" />
-          ) : (
-              <Masonry auth={auth} {...props} />
-            )
-        }
+          path="/masonry"
+          render={props =>
+            !auth.isAuthenticated() ? (
+              <Redirect to="/" />
+            ) : (
+                <Masonry auth={auth} {...props} />
+              )
+          }
         />
         <Route
           path="/plaid"
           component={Plaid}
         />
-
-        <Route
-          path="/contact"
-        />
-
         <Route
           path="/callback"
           render={props => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const NavigationButtons = styled.button`
@@ -25,11 +25,16 @@ const NavigationButtons = styled.button`
         transform: translateY(1px);
     }
 `;
-
-function HomeNavBtn(props) {
-    return (
-        <NavigationButtons>{props.navigationName}</NavigationButtons>
-    )
+class HomeNavBtn extends Component {
+    constructor(props) {
+        super(props);
+        this.navigationName = '';
+    }
+    render() {
+        return (
+            <NavigationButtons>{this.props.navigationName}</NavigationButtons>
+        )
+    }
 }
 
 export default HomeNavBtn;

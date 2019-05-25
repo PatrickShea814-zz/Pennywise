@@ -1,17 +1,10 @@
 html, body {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
+  height: auto;
   font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .App {
-  flex: 1 0 auto;
+  font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
 }
 
 .App-link {

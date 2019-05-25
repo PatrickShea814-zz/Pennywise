@@ -17,7 +17,7 @@ class AboutUs extends Component {
     render() {
         return (
             <div className="about-us" id="about-us">
-                <AboutTitle>The 4 Pennywise Men<hr /></AboutTitle>
+                <AboutTitle>The Penny Wise Men<hr /></AboutTitle>
                 <Row>
                     <Col lg="12" md="12" sm="12">
                         <div className="featured-panes">

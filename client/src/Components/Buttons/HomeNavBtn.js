@@ -5,14 +5,11 @@ const NavigationButtons = styled.button`
     font-size: 18px;
     letter-spacing: 2px;
     margin: 1.8% 3% 0 0;
-    padding: 10px 2em;
+    padding: 0.5rem 1rem;
     color: white;
     background-color: #088f99;
-    cursor: pointer;
     text-decoration: none;
-    vertical-align: middle;
-    border-radius: 0px;
-    text-align: center;
+    border-radius: 0.1rem;
     line-height: normal;
     border: transparent;
     box-shadow: 0px 3px 8px #888888;

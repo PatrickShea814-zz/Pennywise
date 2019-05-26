@@ -4,17 +4,13 @@ import styled from 'styled-components';
 const SignInUp = styled.button`
     font-size: 18px;
     letter-spacing: 2px;
-    margin: 0 1em 0 1em;
-    font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
-    padding: 0.5% 3%;
+    margin: auto;
+    padding: 0.5rem 1rem;
     color: #00a79d;
     background-color: #ffffff;
-    cursor: pointer;
     text-decoration: none;
-    vertical-align: middle;
-    border-radius: 0px;
+    border-radius: 0.1rem;
     user-select: none;
-    text-align: center;
     box-shadow: 0px 5px 8px #888888;
     border: none;
     &:hover {

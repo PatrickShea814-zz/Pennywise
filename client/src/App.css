@@ -1,14 +1,5 @@
 html, body {
   height: auto;
-  font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
-}
-
-.App {
-  font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {

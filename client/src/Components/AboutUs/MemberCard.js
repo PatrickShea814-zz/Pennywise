@@ -43,10 +43,10 @@ class MemberCard extends Component {
                     </Col>
                 </Row>
                 <div className="socialProfiles">
-                    <a href={this.props.linkedin}><FaLinkedin className="linkedin"></FaLinkedin></a>
-                    <a href={this.props.github}><FaGithub className="github"></FaGithub></a>
-                    <a href={this.props.resume}><FaRegFilePdf className="resume"></FaRegFilePdf></a>
-                    <a href={this.props.website}><FaRegIdCard className="website"></FaRegIdCard></a>
+                    <a href={this.props.linkedin} target="blank"><FaLinkedin className="linkedin"></FaLinkedin></a>
+                    <a href={this.props.github} target="blank"><FaGithub className="github"></FaGithub></a>
+                    <a href={this.props.resume} target="blank"><FaRegFilePdf className="resume"></FaRegFilePdf></a>
+                    <a href={this.props.website} target="blank"><FaRegIdCard className="website"></FaRegIdCard></a>
                 </div>
             </Container>
         )

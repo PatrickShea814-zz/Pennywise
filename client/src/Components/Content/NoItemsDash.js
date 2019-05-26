@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const Section = styled.section`
     color: white;
-    font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
     margin: 10% auto;
     text-align: center;
     font-size: 2vw;

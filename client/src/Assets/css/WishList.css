@@ -57,7 +57,6 @@
 
 #viewItem {
     margin: 2%;
-    font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
     font-size: 14px;
     letter-spacing: 1px;
     background-color: #7AE0BB;
@@ -110,7 +109,6 @@
 
 #removeItem {
     margin: 2%;
-    font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
     font-size: 14px;
     letter-spacing: 1px;
     border: none;

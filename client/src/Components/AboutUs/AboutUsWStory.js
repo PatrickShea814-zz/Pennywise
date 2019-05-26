@@ -9,9 +9,8 @@ import '../../Assets/css/AboutUs.css';
 import WeddingBW from '../../Assets/TeamImages/WeddingBW.JPG'
 
 const AboutTitle = styled.h1`
-color: white;
-    font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
-font-size: 2em;
+    color: white;
+    font-size: 2em;
     margin: 0 0 20px 0;
     letter-spacing: 3px;
 `;

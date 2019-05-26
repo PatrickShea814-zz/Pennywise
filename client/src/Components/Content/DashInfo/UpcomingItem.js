@@ -27,8 +27,8 @@ class UpcomingItem extends Component {
             <MicroCard
                 className='item-shadow'
                 url={this.state.nextItemUrl}
-                style={{ fontFamily: '"Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif' }}
-                media={['video', 'image']}
+                media={['video', 'image', 'logo']}
+                size='large'
                 controls
             />
         )

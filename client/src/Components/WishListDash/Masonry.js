@@ -21,7 +21,6 @@ for (let i = 0; i < imgId.length; i++) {
 const Balance = styled.h1`
 display: inline-block;
     font-size: 14px;
-    font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
     letter-spacing: 2px;
     margin: 0px auto;
     width: 100%;
@@ -64,7 +63,7 @@ class Masonry extends Component {
 
     componentDidMount() {
         this.displayImages();
-        if(this.state.images.length > 0) {
+        if (this.state.images.length > 0) {
             console.log("img length ", this.state.images.length);
         }
         else {
@@ -72,9 +71,9 @@ class Masonry extends Component {
         }
     }
 
-    showDashMessage(){
+    showDashMessage() {
         console.log("test")
-        return(
+        return (
             history.replace('/dashmessage')
         )
     }

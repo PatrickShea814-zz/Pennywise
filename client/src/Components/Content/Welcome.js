@@ -71,7 +71,7 @@ class Welcome extends Component {
                         </Row>
                     </Section>
                     <HomeCarousel />
-                </HomeLanding >
+                </HomeLanding>
             )
         }
         else return (

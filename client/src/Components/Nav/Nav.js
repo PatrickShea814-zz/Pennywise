@@ -6,28 +6,25 @@ import CurrentUserProfile from "../Buttons/CurrentUserProfile";
 import pennywiselogo from '../../Assets/LogoImages/whitelogo.png';
 
 const Nav = styled.nav`
-    height: 10%;
+    padding: 10px 0;
     img {
         width: 240px;
         height : 70px;
-        vertical-align: middle;
+        
     }
     .logo {
-        display: inline-block;
-        line-height: 90px;
-        margin: 0 0 0 3%;
+        margin: auto 2%;
     }
 `;
 
 const SignInButton = styled.button`
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 2px;
-    margin: 1.8% 3% 0 0;
+    margin: 15px 2% 15px 1%;
     padding: 0.5rem 1rem;
     color: #00a79d;
     background-color: #ffffff;
     text-decoration: none;
-    vertical-align: middle;
     border-radius: 0.1rem;
     line-height: normal;
     border: none;
@@ -50,7 +47,7 @@ class HomeNav extends Component {
             Contact: "Contact Us!",
             About: "About Us",
             Dashboard: "Dashboard",
-            NavLogo: pennywiselogo,
+            NavLogo: pennywiselogo
         }
     }
 

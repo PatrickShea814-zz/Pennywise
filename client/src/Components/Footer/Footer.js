@@ -75,7 +75,7 @@ class footer extends Component {
                         <a href="/"><span>Privacy</span></a>
                     </li>
                 </MainList>
-            </Footer >
+            </Footer>
         )
     }
 }

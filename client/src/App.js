@@ -39,21 +39,19 @@ class App extends Component {
     const { isAuthenticated } = this.props.auth;
     return (
       <div className="App">
-        <Wrapper >
-          <NavBar {...this.props} />
-          {!isAuthenticated() ? (
+        <NavBar {...this.props} />
+        {!isAuthenticated() ? (
+          <div>
+            <Welcome {...this.props} />
+            <AboutUs />
+          </div>
+        ) : (
             <div>
-              <Welcome {...this.props} />
-              <AboutUs />
+              <UserDropdown />
+              <DashInfo />
+              <Masonry />
             </div>
-          ) : (
-              <div>
-                <UserDropdown />
-                <DashInfo />
-                <Masonry />
-              </div>
-            )}
-        </Wrapper>
+          )}
         <Footer />
       </div>
     )

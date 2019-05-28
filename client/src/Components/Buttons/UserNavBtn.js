@@ -2,15 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const UserNavigationBtn = styled.button`
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 2px;
-    margin: 1.8% 3% 0 0;
+    margin: 15px 1% 15px 1%;
     padding: 0.5rem 1rem;
     color: #00a79d;
     background-color: #ffffff;
     cursor: pointer;
     text-decoration: none;
-    vertical-align: middle;
     border-radius: 0.1rem;
     text-align: center;
     line-height: normal;

@@ -1,5 +1,57 @@
 html, body {
-  height: auto;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.App {
+  background: linear-gradient(225deg, #7ae0bb, #00a79d);
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  -o-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+  @-webkit-keyframes AnimationName {
+    0% {
+      background-position: 0% 50%
+    }
+    50% {
+      background-position: 100% 50%
+    }
+    100% {
+      background-position: 0% 50%
+    }
+  }
+  @-moz-keyframes AnimationName {
+    0% {
+      background-position: 0% 50%
+    }
+    50% {
+      background-position: 100% 50%
+    }
+    100% {
+      background-position: 0% 50%
+    }
+  }
+  @-o-keyframes AnimationName {
+    0% {
+      background-position: 0% 50%
+    }
+    50% {
+      background-position: 100% 50%
+    }
+    100% {
+      background-position: 0% 50%
+    }
+  }
+  @keyframes AnimationName {
+    0% {
+      background-position: 0% 50%
+    }
+    50% {
+      background-position: 100% 50%
+    }
+    100% {
+      background-position: 0% 50%
+    }
+  }
 }
 
 @keyframes App-logo-spin {
@@ -14,11 +66,6 @@ html, body {
 .logo {
   width: 225px;
   height: 85px;
-}
-
-.navbar {
-  margin-bottom: 0px;
-  border: none;
 }
 
 /* NAVIGATION BUTTONS */
@@ -58,21 +105,14 @@ html, body {
 
 /* LOG IN AND SIGN UP BUTTON */
 
-.logSign {
-  background-color: #00A79D;
-  border: none;
-}
-
 .logSign:hover {
   color: #fafafa;
-  background-color: #7AE0BB;
   outline: 0;
   border: none;
 }
 
 .logSign:active {
   color: #fafafa;
-  background-color: #088f99;
   outline: 0;
   border: none;
   transform: translateY(1px);
@@ -80,7 +120,6 @@ html, body {
 
 .logSign:focus {
   color: #fafafa;
-  background-color: #088f99;
   outline: 0;
   border: none;
   transform: scale(.99);

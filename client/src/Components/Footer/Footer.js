@@ -4,8 +4,10 @@ import GreenAppIcon from '../../Assets/LogoImages/GradientOwl.png';
 
 
 const Footer = styled.footer`
-margin: 0 auto;
-    width: 90%;
+    background-color: white;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
     @media (max-width: 900px) {
         width: 90%;
     }

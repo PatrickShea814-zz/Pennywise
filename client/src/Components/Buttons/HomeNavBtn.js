@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const NavigationButtons = styled.button`
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 2px;
-    margin: 1.8% 3% 0 0;
+    margin: 15px 1% 15px 1%;
     padding: 0.5rem 1rem;
     color: white;
     background-color: #088f99;

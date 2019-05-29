@@ -10,7 +10,6 @@ const Nav = styled.nav`
     img {
         width: 240px;
         height : 70px;
-        
     }
     .logo {
         margin: auto 2%;

@@ -4,6 +4,7 @@ import HomeNavBtn from "../Buttons/HomeNavBtn";
 import UserNavBtn from "../Buttons/UserNavBtn";
 import CurrentUserProfile from "../Buttons/CurrentUserProfile";
 import pennywiselogo from '../../Assets/LogoImages/whitelogo.png';
+import Contact from "../Contact/index";
 
 const Nav = styled.nav`
     padding: 10px 0;
@@ -74,6 +75,9 @@ class HomeNav extends Component {
                 </a>
                 <CurrentUserProfile onClick={this.handleSidebar("overlay")} />
                 <UserNavBtn navigationName={this.state.Dashboard}></UserNavBtn>
+                <div className="col-md-2"></div>
+                <Contact className="col-md-8" />
+                <div className="col-md-2"></div>
             </Nav>
         )
     }

@@ -2,7 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import './Components/DarkMode/styles.scss';
 import Wrapper from "./Components/Wrapper/Wrapper";
-import NavBar from "./Components/Nav/Nav.js";
+import HomeNav from "./Components/Nav/Nav.js";
 import Footer from "./Components/Footer/Footer";
 import Welcome from "./Components/Content/Welcome";
 import EmptyWishList from "./Components/Content/NoItemsDash";
@@ -39,7 +39,7 @@ class App extends Component {
     const { isAuthenticated } = this.props.auth;
     return (
       <div className="App">
-        <NavBar {...this.props} />
+        <HomeNav {...this.props} />
         {!isAuthenticated() ? (
           <div>
             <Welcome {...this.props} />

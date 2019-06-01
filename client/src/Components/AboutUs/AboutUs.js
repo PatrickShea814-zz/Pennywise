@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import MemberCard from './MemberCard';
 import MemberInfo from './MemberInfo';
 import '../../Assets/css/AboutUs.css';
+import DeckCard from "./DeckCard";
 
 const AboutTitle = styled.h1`
     color: white;
@@ -23,7 +23,7 @@ class AboutUs extends Component {
                         <div className="featured-panes">
                             {
                                 MemberInfo.map((item, index) => {
-                                    return <MemberCard key={index} name={item.name} description={item.description} photo={require(`../../Assets/TeamImages/${item.photo}`)} class={item.class} linkedin={item.linkedin} github={item.github} resume={item.resume} website={item.website} />
+                                    return <DeckCard key={index} name={item.name} description={item.description} photo={require(`../../Assets/TeamImages/${item.photo}`)} class={item.class} linkedin={item.linkedin} github={item.github} resume={item.resume} website={item.website} />
                                 })
                             }
                         </div>

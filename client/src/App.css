@@ -206,3 +206,20 @@ html, body {
   opacity: 1;
   right: 0;
 }
+
+.navbar-toggler {
+  background-color: white;
+  margin-right: 2%;
+}
+
+.NavAlign {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 991px) {
+  .NavAlign {
+    display: flex;
+    justify-content: center;
+  }
+}

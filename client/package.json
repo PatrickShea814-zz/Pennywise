@@ -8,6 +8,7 @@
   "license": "ISC",
   "proxy": "http://localhost:3001",
   "dependencies": {
+    "@brainhubeu/react-carousel": "^1.10.17",
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
@@ -43,6 +44,7 @@
     "react-burger-menu": "^2.6.10",
     "react-dom": "^16.8.6",
     "react-icons": "^3.7.0",
+    "react-image-gallery": "^0.8.17",
     "react-modal": "^3.8.1",
     "react-plaid-link": "^1.2.0",
     "react-router-dom": "^5.0.0",

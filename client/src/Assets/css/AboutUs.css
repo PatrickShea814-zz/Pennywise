@@ -5,7 +5,7 @@
 
 .featured-panes {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     padding: 0 5%;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -26,7 +26,7 @@ hr {
     background-color: white;
     border: 1px solid #d9d9d9;
     border-radius: 3px;
-    padding: 1%;
+    padding: 0;
     box-shadow: 0px 5px 8px #888888;
     margin: 10px;
     transition: .2s ease-in-out;
@@ -37,16 +37,25 @@ hr {
     transform: scale(1.01);
 }
 
+.card-columns {
+    @include media-breakpoint-only(lg) {
+        column-count: 1;
+    }
+    @include media-breakpoint-only(xl) {
+        column-count: 1;
+    }
+}
+
 .socialProfiles {
     font-size: 30px;
     display: flex;
     justify-content: space-evenly;
-    margin: 0 0 2% 0;
+    margin: 0;
     height: auto;
 }
 
 .pane-image {
-    margin: 5% 0;
+    margin: 5% 0 0 0;
     width: 40%;
     height: auto;
     border-radius: 50%;
@@ -54,20 +63,44 @@ hr {
     box-shadow: 0px 5px 8px #888888;
 }
 
+.pane-image:active {
+    transform: scale(3);
+}
+
 .website {
     color: #00a79d;
+}
+
+.website:hover {
+    text-shadow: 10px 10px 10px blue;
+    transform: scale(1.2);
 }
 
 .resume {
     color: #ff0000;
 }
 
+.resume:hover {
+    text-shadow: 10px 10px 10px blue;
+    transform: scale(1.2);
+}
+
 .github {
     color: #767676;
 }
 
+.github:hover {
+    text-shadow: 10px 10px 10px blue;
+    transform: scale(1.2);
+}
+
 .linkedin {
     color: #0077B5;
+}
+
+.linkedin:hover {
+    text-shadow: 10px 10px 10px blue;
+    transform: scale(1.2);
 }
 
 @media (max-width: 340px) {
@@ -76,5 +109,11 @@ hr {
     }
     .pane-image {
         width: 90%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .logoHide {
+        display: none;
     }
 }

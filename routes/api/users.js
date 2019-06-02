@@ -27,4 +27,8 @@ router
   .route("/update")
   .post(controller.updateUser)
 
+router
+  .route("/mail")
+  .post(controller.mail)
+
 module.exports = router;

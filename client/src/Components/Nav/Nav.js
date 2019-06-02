@@ -6,6 +6,7 @@ import UserNavBtn from "../Buttons/UserNavBtn";
 import CurrentUserProfile from "../Buttons/CurrentUserProfile";
 import SignInButton from "../Buttons/NavSignIn";
 import pennywiselogo from '../../Assets/LogoImages/whitelogo.png';
+import Contact from "../Contact/index";
 
 const NavLogo = styled.img`
     width: 240px;
@@ -61,6 +62,7 @@ class HomeNav extends Component {
                     <UserNavBtn navigationName={this.state.Dashboard}></UserNavBtn>
                 </Navbar.Collapse>
             </Navbar>
+
         )
     }
 

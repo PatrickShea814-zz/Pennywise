@@ -1,43 +1,16 @@
 import React, { Component } from 'react';
+import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 import HomeNavBtn from "../Buttons/HomeNavBtn";
 import UserNavBtn from "../Buttons/UserNavBtn";
 import CurrentUserProfile from "../Buttons/CurrentUserProfile";
+import SignInButton from "../Buttons/NavSignIn";
 import pennywiselogo from '../../Assets/LogoImages/whitelogo.png';
 import Contact from "../Contact/index";
 
-const Nav = styled.nav`
-    padding: 10px 0;
-    img {
-        width: 240px;
-        height : 70px;
-    }
-    .logo {
-        margin: auto 2%;
-    }
-`;
-
-const SignInButton = styled.button`
-    font-size: 16px;
-    letter-spacing: 2px;
-    margin: 15px 2% 15px 1%;
-    padding: 0.5rem 1rem;
-    color: #00a79d;
-    background-color: #ffffff;
-    text-decoration: none;
-    border-radius: 0.1rem;
-    line-height: normal;
-    border: none;
-    box-shadow: 0px 5px 8px #888888;
-    float: right;
-    &:hover {
-        background-color: #7AE0BB;
-        color: white;
-    }
-    &:active {
-        background-color: #00a79d;
-        transform: translateY(1px);
-    }
+const NavLogo = styled.img`
+    width: 240px;
+    height : 70px;
 `;
 
 class HomeNav extends Component {
@@ -58,27 +31,38 @@ class HomeNav extends Component {
         const login = this.props.auth.login
         if (!isLoggedIn) {
             return (
-                <Nav>
-                    <a href={"/"} className="logo">
-                        <img src={this.state.NavLogo} alt="PennyWise Logo" />
-                    </a>
-                    <SignInButton onClick={() => login()}>Sign In</SignInButton>
-                    <HomeNavBtn navigationName={this.state.Contact}></HomeNavBtn>
-                    <HomeNavBtn navigationName={this.state.About}></HomeNavBtn>
-                </Nav>
+                <Navbar expand="lg">
+                    <Navbar.Brand >
+                        <NavLogo
+                            src={this.state.NavLogo}
+                            alt="PennyWise Logo"
+                        />
+                    </Navbar.Brand>
+                    <Navbar.Toggle />
+                    <Navbar.Collapse className="NavAlign">
+                        <HomeNavBtn navigationName={this.state.Contact}></HomeNavBtn>
+                        <HomeNavBtn navigationName={this.state.About}></HomeNavBtn>
+                        <SignInButton onClick={() => login()}>Sign In</SignInButton>
+                    </Navbar.Collapse>
+                </Navbar>
+
             )
         }
         else return (
-            <Nav>
-                <a href={"/"} className="logo">
-                    <img src={this.state.NavLogo} alt="PennyWise Logo" />
-                </a>
-                <CurrentUserProfile onClick={this.handleSidebar("overlay")} />
-                <UserNavBtn navigationName={this.state.Dashboard}></UserNavBtn>
-                <div className="col-md-2"></div>
-                <Contact className="col-md-8" />
-                <div className="col-md-2"></div>
-            </Nav>
+            <Navbar expand="lg">
+                <Navbar.Brand >
+                    <img
+                        src={this.state.NavLogo}
+                        alt="PennyWise Logo"
+                    />
+                </Navbar.Brand>
+                <Navbar.Toggle bg="light" />
+                <Navbar.Collapse className="justify-content-end">
+                    <CurrentUserProfile onClick={this.handleSidebar("overlay")} />
+                    <UserNavBtn navigationName={this.state.Dashboard}></UserNavBtn>
+                </Navbar.Collapse>
+            </Navbar>
+
         )
     }
 

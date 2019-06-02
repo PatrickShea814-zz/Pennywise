@@ -1,6 +1,6 @@
 const MemberInfo = [
     {
-        "name": "Fratrick Shea",
+        "name": "Patrick Shea",
         "photo": "PatrickWedding.jpeg",
         "description": "Ut tincidunt orci quis lectus. Nullam",
         "linkedin": "https://www.linkedin.com/patrick-shea814",

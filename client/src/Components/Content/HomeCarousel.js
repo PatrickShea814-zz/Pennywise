@@ -2,9 +2,6 @@ import React from "react";
 import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
 import styled from 'styled-components';
 import RBCarousel from "react-bootstrap-carousel";
-import ExtensionImage from '../../Assets/CarouselImages/pennywiseextension.png';
-
-const styles = { height: 400, width: "100%" };
 
 const ImageContainer = styled.div`
     margin: auto;
@@ -12,8 +9,8 @@ const ImageContainer = styled.div`
 `;
 
 const Slide = styled.div`
-height: 400px;
-width: 100%;
+    height: 400px;
+    width: 100%;
 `;
 
 
@@ -54,7 +51,6 @@ class HomeCarousel extends React.PureComponent {
                     </Slide>
                     <Slide>
                         <div className="carousel-center">center Text</div>
-
                     </Slide>
                     <Slide>
                         <span>text</span>

@@ -23,6 +23,7 @@ const SignInUp = styled.button`
 `;
 
 function LoginSignin(props) {
+    console.log('HELLO', props.onClick)
     return (
         <SignInUp>{props.AuthName}</SignInUp>
     )

@@ -27,6 +27,7 @@ class HomeNav extends Component {
     handleSidebar = animation => () =>
         this.setState(prevState => ({ visible: !prevState.visible }));
     render() {
+        console.log("WHAT I'M LOOKING FOR",this.props.auth)
         const isLoggedIn = sessionStorage.getItem('isLoggedIn');
         const login = this.props.auth.login
         if (!isLoggedIn) {
@@ -42,7 +43,7 @@ class HomeNav extends Component {
                     <Navbar.Collapse className="NavAlign">
                         <HomeNavBtn navigationName={this.state.Contact}></HomeNavBtn>
                         <HomeNavBtn navigationName={this.state.About}></HomeNavBtn>
-                        <SignInButton onClick={() => login()}>Sign In</SignInButton>
+                        <SignInButton onClick={()=>login()}>Sign In</SignInButton>
                     </Navbar.Collapse>
                 </Navbar>
 

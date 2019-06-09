@@ -44,8 +44,9 @@ class Welcome extends Component {
             AuthName: "Sign Up Today!"
         }
     }
+
     render() {
-        const login = this.props.auth.login
+        const login = this.props.auth.login;
         const isLoggedIn = sessionStorage.getItem('isLoggedIn');
         if (!isLoggedIn) {
             return (
@@ -58,7 +59,7 @@ class Welcome extends Component {
                                 <Subtitle>Are You Pennywise?</Subtitle>
                             </Col>
                             <Col style={{ "padding-left": 0 }}>
-                                <LoginSignin AuthName={this.state.AuthName} onClick={() => login()}></LoginSignin>
+                                <LoginSignin AuthName={this.state.AuthName} onClick={()=>login()}></LoginSignin>
                             </Col>
                         </Row>
                         <Row>

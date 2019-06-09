@@ -6,5 +6,6 @@ module.exports = {
   getAccessToken: require('./getAccessToken'),
   transactions: require('./transactions'),
   authAPI: require('./authAPI'),
-  updateUser: require('./updateUser')
+  updateUser: require('./updateUser'),
+  mail: require('./mail')
 };

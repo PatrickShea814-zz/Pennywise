@@ -23,9 +23,10 @@ box-shadow: 0px 5px 8px #888888;
 }
 `;
 
-function SignInButton() {
+function SignInButton(props) {
+    console.log('THESE ARE THE PROPS', props)
     return (
-        <SignInUp>Sign In</SignInUp>
+        <SignInUp onClick={props.onClick}>Sign In</SignInUp>
     )
 }
 

@@ -1,36 +1,63 @@
-import React, { Component } from 'react';
-import { Carousel } from "react-responsive-carousel";
+import React from "react";
+import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
 import styled from 'styled-components';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import RBCarousel from "react-bootstrap-carousel";
 
 const ImageContainer = styled.div`
-padding: 3% 5% 3% 5%;
+    margin: auto;
+    max-width: 100%;
 `;
 
-class NewCarousel extends Component {
+const Slide = styled.div`
+    height: 400px;
+    width: 100%;
+`;
+
+class HomeCarousel extends React.PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
+            autoplay: true
+        };
+    }
+    slideNext = () => {
+        this.slider.slideNext();
+    };
+    slidePrev = () => {
+        this.slider.slidePrev();
+    };
+
     render() {
+        let { leftIcon, rightIcon } = this.state;
         return (
             <ImageContainer>
-                <Carousel
-                    showThumbs={false}
-                    showStatus={false}
-                    showIndicators={false}
-                    infiniteLoop={true}
-                    autoPlay
+                <RBCarousel
+                    animation={true}
+                    autoplay={this.state.autoplay}
+                    slideshowSpeed={3000}
+                    leftIcon={leftIcon}
+                    rightIcon={rightIcon}
+                    onSelect={this.onSelect}
+                    ref={r => (this.slider = r)}
+                    version={4}
+                    indicators={false}
                 >
-                    <div>
-                        <img src="http://lorempixel.com/output/cats-q-c-640-480-1.jpg" />
-                    </div>
-                    <div>
-                        <img src="http://lorempixel.com/output/cats-q-c-640-480-2.jpg" />
-                    </div>
-                    <div>
-                        <img src="http://lorempixel.com/output/cats-q-c-640-480-3.jpg" />
-                    </div>
-                </Carousel>
+                    <Slide>
+                        <img
+                            style={{ width: "100%", height: "100%" }}
+                            src="https://www.w3schools.com/bootstrap/ny.jpg"
+                        />
+                    </Slide>
+                    <Slide>
+                        <div className="carousel-center">center Text</div>
+                    </Slide>
+                    <Slide>
+                        <span>text</span>
+                    </Slide>
+                </RBCarousel>
             </ImageContainer>
         );
     }
 }
 
-export default NewCarousel;
+export default HomeCarousel;

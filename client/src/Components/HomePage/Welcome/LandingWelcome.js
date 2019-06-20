@@ -54,8 +54,8 @@ class LandingWelcome extends Component {
         this.slider.slidePrev();
     };
 
-    goToSlide = () => {
-        this.slider.goToSlide();
+    goToSlide = i => {
+        this.slider.goToSlide(i);
     };
 
     render() {
@@ -94,7 +94,7 @@ class LandingWelcome extends Component {
                         <CardGroup>
                             {
                                 FeaturesInfo.map((item, index) => {
-                                    return <FeatureCard key={index} goToSlide={this.goToSlide} icon={require(`../../../Assets/FeaturesImages/${item.icon}`)} title={item.title} description={item.description} />
+                                    return <FeatureCard key={index} goToSlide={()=>this.goToSlide(index)} icon={require(`../../../Assets/FeaturesImages/${item.icon}`)} title={item.title} description={item.description} />
                                 })
                             }
                         </CardGroup>

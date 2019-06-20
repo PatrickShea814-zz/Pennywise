@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import Welcome from './Welcome';
 import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
 import RBCarousel from "react-bootstrap-carousel";
-import NewCarousel from './Carousel';
 import FeatureCard from './FeatureCards';
 import FeaturesInfo from './FeaturesInfo';
 
@@ -44,6 +43,10 @@ class LandingWelcome extends Component {
         };
     }
 
+    onSelect = (active, direction) => {
+        console.log(`active=${active} && direction=${direction}`);
+    };
+
     slideNext = () => {
         this.slider.slideNext();
     };
@@ -52,7 +55,7 @@ class LandingWelcome extends Component {
     };
 
     goToSlide = () => {
-        this.slider.goToSlide(1);
+        this.slider.goToSlide();
     };
 
     render() {

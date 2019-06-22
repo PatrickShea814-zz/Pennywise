@@ -68,6 +68,10 @@ html, body {
   height: 85px;
 }
 
+.NavbarBackground {
+  background: linear-gradient( to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.09));
+}
+
 /* NAVIGATION BUTTONS */
 
 .navBtn {
@@ -217,6 +221,20 @@ html, body {
   justify-content: flex-end;
 }
 
+.WelcomeButtons {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.CardWrap {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.card-group>.card {
+  margin: 0;
+}
+
 .FeatureCards {
   border-radius: 0;
   display: flex;
@@ -226,16 +244,21 @@ html, body {
   text-align: center;
 }
 
-.FeatureCards:active {
+.ActiveCard {
+  border-radius: 0;
+  display: flex;
   border-top: 5px solid white;
   background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  justify-content: center;
+  text-align: center;
 }
 
 .ActiveDescription {
   visibility: hidden;
 }
 
-.FeatureCards:active .ActiveDescription {
+.ActiveCard .ActiveDescription {
   visibility: visible;
 }
 
@@ -255,9 +278,4 @@ html, body {
     display: flex;
     justify-content: center;
   }
-}
-
-.BrainhubCarousel__dots li {
-  width: 100%;
-  margin: 0;
 }

@@ -26,9 +26,6 @@ const Slide = styled.img`
     width: 100%;
 `;
 
-// MAP BOTH CAROUSEL AND FEATURE CARDS
-// CREATE ONCHANGE FUNCTION TO SET STATE TO KEY VALUE
-// CHANGE CSS CLASS BASED ONCHANGE VALUE
 
 class LandingWelcome extends Component {
     constructor(props) {
@@ -39,12 +36,13 @@ class LandingWelcome extends Component {
                 "https://www.w3schools.com/bootstrap/ny.jpg",
                 "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/canyon.jpg",
                 "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/city.jpg"
-            ]
+            ],
+            activeIndex: 0
         };
     }
 
-    onSelect = (active, direction) => {
-        console.log(`active=${active} && direction=${direction}`);
+    onSelect = (active) => {
+        this.setState({ activeIndex: active })
     };
 
     slideNext = () => {
@@ -58,15 +56,16 @@ class LandingWelcome extends Component {
         this.slider.goToSlide(i);
     };
 
+
     render() {
         let { leftIcon, rightIcon } = this.state;
         return (
             <WelcomeWrapper>
                 <Row>
-                    <Col>
+                    <Col lg="6" md="12" sm="12">
                         <Welcome />
                     </Col>
-                    <Col>
+                    <Col lg="6" md="12" sm="12">
                         <ImageContainer>
                             <RBCarousel
                                 animation={true}
@@ -82,8 +81,7 @@ class LandingWelcome extends Component {
                                 {
                                     this.state.images.map((image, index) => (
                                         <Slide key={index}
-                                            src={image} />
-                                    ))
+                                            src={image} />))
                                 }
                             </RBCarousel>
                         </ImageContainer>
@@ -91,10 +89,10 @@ class LandingWelcome extends Component {
                 </Row>
                 <Row>
                     <Col>
-                        <CardGroup>
+                        <CardGroup className="CardWrap">
                             {
                                 FeaturesInfo.map((item, index) => {
-                                    return <FeatureCard key={index} goToSlide={()=>this.goToSlide(index)} icon={require(`../../../Assets/FeaturesImages/${item.icon}`)} title={item.title} description={item.description} />
+                                    return <FeatureCard key={index} isActive={this.state.activeIndex === index} goToSlide={() => this.goToSlide(index)} icon={require(`../../../Assets/FeaturesImages/${item.icon}`)} title={item.title} description={item.description} />
                                 })
                             }
                         </CardGroup>

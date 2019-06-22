@@ -31,7 +31,7 @@ class HomeNav extends Component {
         const login = this.props.auth.login
         if (!isLoggedIn) {
             return (
-                <Navbar expand="lg">
+                <Navbar className="NavbarBackground" expand="lg">
                     <Navbar.Brand >
                         <NavLogo
                             src={this.state.NavLogo}

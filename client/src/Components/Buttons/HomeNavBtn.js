@@ -12,7 +12,6 @@ const NavigationButtons = styled.button`
     border-radius: 0.1rem;
     line-height: normal;
     border: transparent;
-    box-shadow: 0px 3px 8px #888888;
     &:hover {
         background-color: #7AE0BB;
     }

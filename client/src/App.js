@@ -1,20 +1,16 @@
 import React from 'react';
 import { Component } from 'react';
 import './Components/DarkMode/styles.scss';
-import Wrapper from "./Components/Wrapper/Wrapper";
 import HomeNav from "./Components/Nav/Nav.js";
 import Footer from "./Components/Footer/Footer";
-import Welcome from "./Components/Content/Welcome";
-import EmptyWishList from "./Components/Content/NoItemsDash";
 import history from "./history";
 import './App.css';
 import './Components/DarkMode/styles.scss';
 import Masonry from './Components/WishListDash/Masonry';
 import DashInfo from './Components/Content/DashInfo/DashInfo';
-import DashMessage from './Components/Content/DashMessage';
 import UserDropdown from './Components/SideNav/UserDropdown';
 import AboutUs from "./Components/AboutUs/AboutUs";
-
+import LandingWelcome from './Components/HomePage/Welcome/LandingWelcome';
 
 class App extends Component {
 
@@ -42,7 +38,7 @@ class App extends Component {
         <HomeNav {...this.props} />
         {!isAuthenticated() ? (
           <div>
-            <Welcome {...this.props} />
+            <LandingWelcome />
             <AboutUs />
           </div>
         ) : (

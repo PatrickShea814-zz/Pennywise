@@ -68,6 +68,10 @@ html, body {
   height: 85px;
 }
 
+.NavbarBackground {
+  background: linear-gradient( to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.09));
+}
+
 /* NAVIGATION BUTTONS */
 
 .navBtn {
@@ -215,6 +219,58 @@ html, body {
 .NavAlign {
   display: flex;
   justify-content: flex-end;
+}
+
+.WelcomeButtons {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.CardWrap {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.card-group>.card {
+  margin: 0;
+}
+
+.FeatureCards {
+  border-radius: 0;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  justify-content: center;
+  text-align: center;
+}
+
+.ActiveCard {
+  border-radius: 0;
+  display: flex;
+  border-top: 5px solid white;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  justify-content: center;
+  text-align: center;
+}
+
+.ActiveDescription {
+  visibility: hidden;
+}
+
+.ActiveCard .ActiveDescription {
+  visibility: visible;
+}
+
+.FeatureImg {
+  margin: 0 auto;
+  padding: 0;
+  height: 75px;
+  width: 75px;
+}
+
+.FeatureBody {
+  padding: 0;
 }
 
 @media screen and (max-width: 991px) {

@@ -13,7 +13,6 @@ const Slide = styled.div`
     width: 100%;
 `;
 
-
 class HomeCarousel extends React.PureComponent {
     constructor(props) {
         super(props);
@@ -62,22 +61,3 @@ class HomeCarousel extends React.PureComponent {
 }
 
 export default HomeCarousel;
-
-/**
- *  Boostrap Component
- */
-const Row = props => <div className="row">{props.children}</div>;
-const Col = props => (
-    <div className={`col-${props.span} `} style={props.style}>
-        {props.children}
-    </div>
-);
-const Button = props => {
-    const { style, bsStyle, onClick } = props;
-    const className = bsStyle ? `btn btn - ${bsStyle} ` : "btn";
-    return (
-        <button style={style} className={className} onClick={onClick}>
-            {props.children}
-        </button>
-    );
-};

@@ -9,10 +9,6 @@
     padding: 0 5%;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
-    /*Below CSS is for AboutUsWStory when ready */
-    /* display: flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap; */
 }
 
 hr {

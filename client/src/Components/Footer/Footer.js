@@ -41,7 +41,7 @@ class BootFooter extends Component {
                         <FooterLink href="/"><span>About Us</span></FooterLink>
                     </Nav.Item>
                     <Nav.Item>
-                        <FooterLink href="/"><span>Contact Us</span></FooterLink>
+                        <FooterLink href="/contact"><span>Contact Us</span></FooterLink>
                     </Nav.Item>
                     <Nav.Item className="logoHide">
                         <FooterLink href="/">

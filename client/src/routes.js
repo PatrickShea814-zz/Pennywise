@@ -8,6 +8,7 @@ import Plaid from "./Components/Plaid/index";
 import Masonry from "./Components/WishListDash/Masonry";
 import Transactions from "./Components/Transactions";
 import DashMessage from "./Components/Content/DashMessage";
+import Contact from "./Components/Contact";
 import Wrapper from "./Components/Wrapper/Wrapper"
 import WishList from "./Components/WishListDash/WishList";
 import AboutUs from "./Components/AboutUs/AboutUs";
@@ -65,6 +66,10 @@ export const makeMainRoutes = () => {
         <Route
           path="/plaid"
           component={Plaid}
+        />
+        <Route
+          path="/contact"
+          component={Contact}
         />
         <Route
           path="/callback"

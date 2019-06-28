@@ -68,10 +68,6 @@ export const makeMainRoutes = () => {
           component={Plaid}
         />
         <Route
-          path="/contact"
-          component={Contact}
-        />
-        <Route
           path="/callback"
           render={props => {
             handleAuthentication(props);

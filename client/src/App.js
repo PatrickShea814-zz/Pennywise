@@ -11,6 +11,7 @@ import DashInfo from './Components/Content/DashInfo/DashInfo';
 import UserDropdown from './Components/SideNav/UserDropdown';
 import AboutUs from "./Components/AboutUs/AboutUs";
 import LandingWelcome from './Components/HomePage/Welcome/LandingWelcome';
+import Contact from './Components/Contact/index';
 
 class App extends Component {
 
@@ -40,6 +41,7 @@ class App extends Component {
           <div>
             <LandingWelcome />
             <AboutUs />
+            <Contact />
           </div>
         ) : (
             <div>

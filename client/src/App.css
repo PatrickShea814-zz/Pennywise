@@ -256,6 +256,7 @@ html, body {
 
 .ActiveDescription {
   visibility: hidden;
+  padding-bottom: 15px;
 }
 
 .ActiveCard .ActiveDescription {

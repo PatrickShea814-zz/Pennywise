@@ -22,7 +22,7 @@ border: none;
 }
 `;
 
-function SignInButton() {
+function SignInButton(props) {
     return (
         <SignInUp onClick={props.onClick}>Sign In</SignInUp>
     )

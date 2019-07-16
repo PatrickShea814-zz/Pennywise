@@ -12,9 +12,6 @@ class FeatureCard extends Component {
                     <Card.Title>
                         {this.props.title}
                     </Card.Title>
-                    <Card.Text className="ActiveDescription">
-                        {this.props.description}
-                    </Card.Text>
                 </Card.Body>
             </Card>
         )

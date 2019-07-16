@@ -14,9 +14,6 @@ class Features extends React.PureComponent {
                         <Card.Title>
                             No Commitments.
                         </Card.Title>
-                        <Card.Text>
-                            Window-shop now, buy later.
-                        </Card.Text>
                     </Card.Body>
                 </Card>
                 <Card className="FeatureCards" onClick={this.props.goToSlide} key={1}>
@@ -25,9 +22,6 @@ class Features extends React.PureComponent {
                         <Card.Title>
                             Avoid impulse purchases.
                         </Card.Title>
-                        <Card.Text>
-                            Effortlessly save your pocket change for future purchases.
-                        </Card.Text>
                     </Card.Body>
                 </Card>
                 <Card className="FeatureCards" onClick={this.props.goToSlide} key={2}>
@@ -36,9 +30,6 @@ class Features extends React.PureComponent {
                         <Card.Title>
                             Treat yourself!
                         </Card.Title>
-                        <Card.Text>
-                            Get notified when you have saved enough for any item on your wish list.
-                        </Card.Text>
                     </Card.Body>
                 </Card>
             </CardGroup>

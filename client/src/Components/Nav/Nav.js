@@ -17,8 +17,8 @@ class HomeNav extends Component {
     constructor() {
         super();
         this.state = {
-            Contact: "Contact Us!",
-            About: "About Us",
+            Contact: "Contact",
+            About: "About",
             Dashboard: "Dashboard",
             NavLogo: pennywiselogo
         }
@@ -27,23 +27,17 @@ class HomeNav extends Component {
     handleSidebar = animation => () =>
         this.setState(prevState => ({ visible: !prevState.visible }));
     render() {
-        console.log("WHAT I'M LOOKING FOR",this.props.auth)
+        console.log("WHAT I'M LOOKING FOR", this.props.auth)
         const isLoggedIn = sessionStorage.getItem('isLoggedIn');
         const login = this.props.auth.login
         if (!isLoggedIn) {
             return (
-                <Navbar className="NavbarBackground" expand="lg">
-                    <Navbar.Brand >
-                        <NavLogo
-                            src={this.state.NavLogo}
-                            alt="PennyWise Logo"
-                        />
-                    </Navbar.Brand>
+                <Navbar expand="lg">
                     <Navbar.Toggle />
                     <Navbar.Collapse className="NavAlign">
                         <HomeNavBtn navigationName={this.state.Contact}></HomeNavBtn>
                         <HomeNavBtn navigationName={this.state.About}></HomeNavBtn>
-                        <SignInButton onClick={()=>login()}>Sign In</SignInButton>
+                        <SignInButton onClick={() => login()}>Sign In</SignInButton>
                     </Navbar.Collapse>
                 </Navbar>
 

@@ -35,7 +35,7 @@ class BootFooter extends Component {
     }
     render() {
         return (
-            <Navbar className="justify-content-center" bg="light">
+            <Navbar className="justify-content-center footer" bg="light">
                 <Nav className="flex-md-row flex-column">
                     <Nav.Item>
                         <FooterLink href="/"><span>About Us</span></FooterLink>

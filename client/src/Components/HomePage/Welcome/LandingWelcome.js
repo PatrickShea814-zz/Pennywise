@@ -103,6 +103,5 @@ class LandingWelcome extends Component {
     }
 }
 
-
 export default LandingWelcome;
 

@@ -2,21 +2,24 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const NavigationButtons = styled.button`
+    text-transform: uppercase;
     font-size: 16px;
     letter-spacing: 2px;
     margin: 15px 1% 15px 1%;
     padding: 0.5rem 1rem;
     color: white;
-    background-color: #088f99;
-    text-decoration: none;
+    background-color: transparent;
+    text-decoration: underline;
     border-radius: 0.1rem;
     line-height: normal;
-    border: transparent;
+    border: none;
+    border-radius: 1rem;
     &:hover {
-        background-color: #7AE0BB;
+        background-color: rgb(122, 224, 187, 0.65);
+        box-shadow: 0 0 8px 0px #33313147;
     }
     &:active {
-        background-color: #00A79D;
+        background-color: rgb(0, 167, 157, 0.9);
         transform: translateY(1px);
     }
 `;

@@ -10,8 +10,8 @@ import Masonry from './Components/WishListDash/Masonry';
 import DashInfo from './Components/Content/DashInfo/DashInfo';
 import UserDropdown from './Components/SideNav/UserDropdown';
 import AboutUs from "./Components/AboutUs/AboutUs";
-import LandingWelcome from './Components/HomePage/Welcome/LandingWelcome';
 import Contact from './Components/Contact/index';
+import HomeLanding from './Components/DDGHomePage/HomeLanding';
 
 class App extends Component {
 
@@ -39,9 +39,7 @@ class App extends Component {
         <HomeNav {...this.props} />
         {!isAuthenticated() ? (
           <div>
-            <LandingWelcome />
-            <AboutUs />
-            <Contact />
+            <HomeLanding />
           </div>
         ) : (
             <div>
@@ -50,7 +48,6 @@ class App extends Component {
               <Masonry />
             </div>
           )}
-        <Footer />
       </div>
     )
   }

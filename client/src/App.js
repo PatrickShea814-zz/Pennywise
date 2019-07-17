@@ -32,7 +32,6 @@ class App extends Component {
   }
 
   render() {
-    const { dimmed, visible } = this.state;
     const { isAuthenticated } = this.props.auth;
     return (
       <div className="App">
@@ -40,6 +39,7 @@ class App extends Component {
         {!isAuthenticated() ? (
           <div>
             <HomeLanding />
+            <Contact />
           </div>
         ) : (
             <div>
@@ -48,6 +48,7 @@ class App extends Component {
               <Masonry />
             </div>
           )}
+        <Footer />
       </div>
     )
   }

@@ -13,7 +13,10 @@ const SignInUp = styled.button`
     border-radius: 1rem;
     user-select: none;
     border: none;
-    &:hover {
+    -webkit-transition-duration: 0.6s; /* Safari */
+    transition-duration: 0.6s;
+    &:hover { 
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
         background-color: rgb(0, 167, 157, 0.65);
         color: white;
     }
@@ -23,9 +26,8 @@ const SignInUp = styled.button`
 `;
 
 function LoginSignin(props) {
-    console.log('HELLO', props.onClick)
     return (
-        <SignInUp>{props.AuthName}<i class="fas fa-user-plus"></i></SignInUp>
+        <SignInUp onClick={props.onClick}>{props.AuthName} <i class="fas fa-user-plus"></i></SignInUp>
     )
 }
 

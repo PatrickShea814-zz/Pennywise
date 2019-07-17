@@ -13,10 +13,11 @@ text-decoration: none;
 border-radius: 1rem;
 line-height: normal;
 border: none;
-box-shadow: 0 0 8px 0px #33313147;
+-webkit-transition-duration: 0.6s; /* Safari */
+transition-duration: 0.6s;
 &:hover {
     background-color: #7AE0BB;
-    box-shadow: 0 0 8px 0px #33313147;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
     color: white;
 }
 &:active {

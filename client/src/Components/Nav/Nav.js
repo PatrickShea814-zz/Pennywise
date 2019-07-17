@@ -29,7 +29,7 @@ class HomeNav extends Component {
     render() {
         console.log("WHAT I'M LOOKING FOR", this.props.auth)
         const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-        const login = this.props.auth.login
+        const login = this.props.auth.login;
         if (!isLoggedIn) {
             return (
                 <Navbar expand="lg">
@@ -40,7 +40,6 @@ class HomeNav extends Component {
                         <SignInButton onClick={() => login()}>Sign In</SignInButton>
                     </Navbar.Collapse>
                 </Navbar>
-
             )
         }
         else return (

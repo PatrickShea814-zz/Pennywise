@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { CardGroup } from 'react-bootstrap';
 import BackgroundSlider from 'react-background-slider'
 import HomeCard from './WelcomeCard';
-import FeatureCard from '../HomePage/Welcome/FeatureCards';
-import FeaturesInfo from '../HomePage/Welcome/FeaturesInfo';
+import FeatureCard from './FeatureCards';
+import FeaturesInfo from './FeaturesInfo';
 
 import image1 from '../../Assets/TestImages/image1.jpg';
 import image2 from '../../Assets/TestImages/image2.jpg';

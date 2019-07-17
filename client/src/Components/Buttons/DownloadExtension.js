@@ -13,9 +13,11 @@ const ExtensionButton = styled.button`
     border-radius: 1rem;
     user-select: none;
     border: none;
+    -webkit-transition-duration: 0.6s; /* Safari */
+    transition-duration: 0.6s;
     &:hover {
         background-color: rgb(0, 167, 157, 0.65);
-        box-shadow: 0 0 8px 0px #33313147;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
         color: white;
     }
     &:active {

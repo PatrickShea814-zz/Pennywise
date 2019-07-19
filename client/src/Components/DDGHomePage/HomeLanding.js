@@ -29,31 +29,46 @@ class HomeLanding extends Component {
         this.setState({ activeIndex: active })
     };
 
-    slideNext = () => {
-        this.slider.slideNext();
-    };
-    slidePrev = () => {
-        this.slider.slidePrev();
+    slideChanger = () => { 
+        let indx = 0;
+        setTimeout(()=>{
+            if(indx > this.state.images.length){
+                indx = 0;
+            }
+            indx++;
+            this.setState({ activeIndex: indx});
+        }, 8000)
     };
 
     goToSlide = i => {
         this.slider.goToSlide(i);
     };
+
     render() {
+        const { activeIndex, images } = this.state;
+        this.slideChanger();
+        const active = num => {
+
+            if ( num === activeIndex ){
+                return true
+            }
+
+            return false
+        }
         return (
             <div>
                 <HomeCard />
                 <CardGroup className="CardWrap">
                     {
                         FeaturesInfo.map((item, index) => {
-                            return <FeatureCard key={index} isActive={this.state.activeIndex === index} goToSlide={() => this.goToSlide(index)} icon={require(`../../Assets/FeaturesImages/${item.icon}`)} title={item.title} description={item.description} />
+                            return <FeatureCard key={index} isActive={active(index)} onClick={() => this.onSelect(index)} icon={require(`../../Assets/FeaturesImages/${item.icon}`)} title={item.title} description={item.description} />
                         })
                     }
                 </CardGroup>
                 <BackgroundSlider
-                    images={this.state.images}
+                    images={[images[activeIndex]]}
                     duration={8}
-                    transition={2}
+                    transition={0}
                 />
             </div>
         )

@@ -29,24 +29,8 @@ class HomeLanding extends Component {
         this.setState({ activeIndex: active })
     };
 
-    slideChanger = () => { 
-        let indx = 0;
-        setTimeout(()=>{
-            if(indx > this.state.images.length){
-                indx = 0;
-            }
-            indx++;
-            this.setState({ activeIndex: indx});
-        }, 8000)
-    };
-
-    goToSlide = i => {
-        this.slider.goToSlide(i);
-    };
-
     render() {
         const { activeIndex, images } = this.state;
-        this.slideChanger();
         const active = num => {
 
             if ( num === activeIndex ){
@@ -55,6 +39,17 @@ class HomeLanding extends Component {
 
             return false
         }
+
+        setTimeout(()=>{
+            if(activeIndex === 2){
+                this.onSelect(0);
+            } else if (activeIndex === 0) {
+                this.onSelect(1);
+            } else {
+                this.onSelect(2);
+            }
+        }, 8000)
+        
         return (
             <div>
                 <HomeCard />

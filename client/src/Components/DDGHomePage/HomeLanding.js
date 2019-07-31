@@ -29,6 +29,7 @@ class HomeLanding extends Component {
         this.setState({ activeIndex: active })
     };
 
+<<<<<<< HEAD
     slideNext = () => {
         this.slider.slideNext();
     };
@@ -40,6 +41,29 @@ class HomeLanding extends Component {
         this.slider.goToSlide(i);
     };
     render() {
+=======
+    render() {
+        const { activeIndex, images } = this.state;
+        const active = num => {
+
+            if ( num === activeIndex ){
+                return true
+            }
+
+            return false
+        }
+
+        setTimeout(()=>{
+            if(activeIndex === 2){
+                this.onSelect(0);
+            } else if (activeIndex === 0) {
+                this.onSelect(1);
+            } else {
+                this.onSelect(2);
+            }
+        }, 8000)
+        
+>>>>>>> 0484ba72fec8690ec9ff470f753d052f568c42ef
         return (
             <div>
                 <HomeCard />

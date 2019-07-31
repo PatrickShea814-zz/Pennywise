@@ -1,13 +1,15 @@
 Form {
-    margin-top: 40px;
-    border: 2px solid #00e6d6;
-    padding: 40px 20px;
-    background: white;
-    box-shadow: 0px 5px 8px #888888;
-    border-radius: 6px;
+    display: flex;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    height: auto;
 }
 
-.contact-us {
-    margin: 5% 0;
-    font-size: 1.5em;
+.formInput {
+    font-size: 0.8rem;
+    background-color: #f7f7f7;
 }

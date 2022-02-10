@@ -34,7 +34,7 @@
     "moment": "^2.24.0",
     "mongoose": "^5.5.7",
     "morgan": "^1.9.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "nodemon": "^1.19.0",
     "nuka-carousel": "^4.5.5",
     "plaid": "^3.1.1",
